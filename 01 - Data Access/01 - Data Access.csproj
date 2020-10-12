@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0815BB4C-2024-4940-B88E-F2A1D13490EC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OhadsCarRental</RootNamespace>
+    <AssemblyName>01 - Data Access</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CarModel.cs">
+      <DependentUpon>OhadsCarRental.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CarsSearch_Result.cs">
+      <DependentUpon>OhadsCarRental.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contact.cs">
+      <DependentUpon>OhadsCarRental.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FleetCar.cs">
+      <DependentUpon>OhadsCarRental.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Manufacturer.cs">
+      <DependentUpon>OhadsCarRental.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ManufacturerModel.cs">
+      <DependentUpon>OhadsCarRental.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OhadsCarRental.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OhadsCarRental.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OhadsCarRental.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OhadsCarRental.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OhadsCarRental.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OhadsCarRental.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Partial Classes\CarModel.cs" />
+    <Compile Include="Partial Classes\Contact.cs" />
+    <Compile Include="Partial Classes\FleetCar.cs" />
+    <Compile Include="Partial Classes\Manufacturer.cs" />
+    <Compile Include="Partial Classes\ManufacturerModel.cs" />
+    <Compile Include="Partial Classes\User.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rental.cs">
+      <DependentUpon>OhadsCarRental.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Role.cs">
+      <DependentUpon>OhadsCarRental.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateAvailabilityOfCars_Result.cs">
+      <DependentUpon>OhadsCarRental.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
+      <DependentUpon>OhadsCarRental.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Validations\BirthDateValidation.cs" />
+    <Compile Include="Validations\IdentityNumberValidation.cs" />
+    <Compile Include="Validations\DateGreaterThanToday.cs" />
+    <Compile Include="Validations\DateGreaterThanProperty.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="OhadsCarRental.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>OhadsCarRental.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="OhadsCarRental.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>OhadsCarRental.edmx</DependentUpon>
+      <LastGenOutput>OhadsCarRental.Context.cs</LastGenOutput>
+    </None>
+    <None Include="OhadsCarRental.edmx.diagram">
+      <DependentUpon>OhadsCarRental.edmx</DependentUpon>
+    </None>
+    <None Include="OhadsCarRental.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>OhadsCarRental.edmx</DependentUpon>
+      <LastGenOutput>OhadsCarRental.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

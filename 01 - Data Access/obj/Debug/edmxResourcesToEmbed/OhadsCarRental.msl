@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="OhadsCarRentalModelStoreContainer" CdmEntityContainer="OhadsCarRentalEntities">
+    <EntitySetMapping Name="CarModels">
+      <EntityTypeMapping TypeName="OhadsCarRentalModel.CarModel">
+        <MappingFragment StoreEntitySet="CarModels">
+          <ScalarProperty Name="CarModelID" ColumnName="CarModelID" />
+          <ScalarProperty Name="ManufacturerModelID" ColumnName="ManufacturerModelID" />
+          <ScalarProperty Name="ProductionYear" ColumnName="ProductionYear" />
+          <ScalarProperty Name="ManualGear" ColumnName="ManualGear" />
+          <ScalarProperty Name="DailyPrice" ColumnName="DailyPrice" />
+          <ScalarProperty Name="DayDelayPrice" ColumnName="DayDelayPrice" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contacts">
+      <EntityTypeMapping TypeName="OhadsCarRentalModel.Contact">
+        <MappingFragment StoreEntitySet="Contacts">
+          <ScalarProperty Name="ContactID" ColumnName="ContactID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+          <ScalarProperty Name="IsRead" ColumnName="IsRead" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FleetCars">
+      <EntityTypeMapping TypeName="OhadsCarRentalModel.FleetCar">
+        <MappingFragment StoreEntitySet="FleetCars">
+          <ScalarProperty Name="LicensePlate" ColumnName="LicensePlate" />
+          <ScalarProperty Name="CarModelID" ColumnName="CarModelID" />
+          <ScalarProperty Name="CurrentMileage" ColumnName="CurrentMileage" />
+          <ScalarProperty Name="CarImage" ColumnName="CarImage" />
+          <ScalarProperty Name="IsProper" ColumnName="IsProper" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ManufacturerModels">
+      <EntityTypeMapping TypeName="OhadsCarRentalModel.ManufacturerModel">
+        <MappingFragment StoreEntitySet="ManufacturerModels">
+          <ScalarProperty Name="ManufacturerModelID" ColumnName="ManufacturerModelID" />
+          <ScalarProperty Name="ManufacturerModelName" ColumnName="ManufacturerModelName" />
+          <ScalarProperty Name="ManufacturerID" ColumnName="ManufacturerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Manufacturers">
+      <EntityTypeMapping TypeName="OhadsCarRentalModel.Manufacturer">
+        <MappingFragment StoreEntitySet="Manufacturers">
+          <ScalarProperty Name="ManufacturerID" ColumnName="ManufacturerID" />
+          <ScalarProperty Name="ManufacturerName" ColumnName="ManufacturerName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rentals">
+      <EntityTypeMapping TypeName="OhadsCarRentalModel.Rental">
+        <MappingFragment StoreEntitySet="Rentals">
+          <ScalarProperty Name="RentalID" ColumnName="RentalID" />
+          <ScalarProperty Name="LicensePlate" ColumnName="LicensePlate" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="PickUpDate" ColumnName="PickUpDate" />
+          <ScalarProperty Name="ReturnDate" ColumnName="ReturnDate" />
+          <ScalarProperty Name="ActualReturnDate" ColumnName="ActualReturnDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="OhadsCarRentalModel.Role">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="OhadsCarRentalModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="IdentityNumber" ColumnName="IdentityNumber" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="RoleUsers" TypeName="OhadsCarRentalModel.RoleUsers" StoreEntitySet="RoleUsers">
+      <EndProperty Name="Roles">
+        <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+      </EndProperty>
+      <EndProperty Name="Users">
+        <ScalarProperty Name="UserID" ColumnName="UserID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <FunctionImportMapping FunctionImportName="CarCheckAvailability" FunctionName="OhadsCarRentalModel.Store.CarCheckAvailability" />
+    <FunctionImportMapping FunctionImportName="CarsSearch" FunctionName="OhadsCarRentalModel.Store.CarsSearch">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="OhadsCarRentalModel.CarsSearch_Result">
+          <ScalarProperty Name="LicensePlate" ColumnName="LicensePlate" />
+          <ScalarProperty Name="ManufacturerName" ColumnName="ManufacturerName" />
+          <ScalarProperty Name="ManufacturerModelName" ColumnName="ManufacturerModelName" />
+          <ScalarProperty Name="ProductionYear" ColumnName="ProductionYear" />
+          <ScalarProperty Name="ManualGear" ColumnName="ManualGear" />
+          <ScalarProperty Name="DailyPrice" ColumnName="DailyPrice" />
+          <ScalarProperty Name="DayDelayPrice" ColumnName="DayDelayPrice" />
+          <ScalarProperty Name="CarImage" ColumnName="CarImage" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="UpdateAvailabilityOfCars" FunctionName="OhadsCarRentalModel.Store.UpdateAvailabilityOfCars">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="OhadsCarRentalModel.UpdateAvailabilityOfCars_Result">
+          <ScalarProperty Name="LicensePlate" ColumnName="LicensePlate" />
+          <ScalarProperty Name="CarModelID" ColumnName="CarModelID" />
+          <ScalarProperty Name="CurrentMileage" ColumnName="CurrentMileage" />
+          <ScalarProperty Name="CarImage" ColumnName="CarImage" />
+          <ScalarProperty Name="IsProper" ColumnName="IsProper" />
+          <ScalarProperty Name="RentalID" ColumnName="RentalID" />
+          <ScalarProperty Name="LicensePlate1" ColumnName="LicensePlate1" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="PickUpDate" ColumnName="PickUpDate" />
+          <ScalarProperty Name="ReturnDate" ColumnName="ReturnDate" />
+          <ScalarProperty Name="ActualReturnDate" ColumnName="ActualReturnDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>
