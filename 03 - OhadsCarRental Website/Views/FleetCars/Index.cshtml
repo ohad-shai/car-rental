@@ -1,0 +1,38 @@
+﻿@model IEnumerable<OhadsCarRental.FleetCar>
+
+@{
+    ViewBag.Title = "Fleet Cars Management - Ohad's Car Rental";
+}
+
+<div class="d-section">
+    <h1 class="d-title">Fleet Cars Management</h1>
+    <hr class="d-title-separator" />
+
+    <div class="basic-form big">
+
+        <div class="basic-form-row">
+            <span class="basic-btn medium main right create-fg">@Html.ActionLink("Create New", "Create")</span>
+        </div>
+
+        <div class="basic-form-row">
+            <div class="model-tbl">
+
+                <div class="model-tbl-th col-4">
+                    <span>License Plate</span>
+                    <span>Car Model</span>
+                    <span>Current Mileage</span>
+                    <span>Is Proper</span>
+                </div>
+
+                @foreach (var fleetCar in Model)
+                {
+                    @Html.Partial("_FleetCarDetailsPartial", fleetCar)
+                }
+            </div>
+        </div>
+
+        <p class="validation-summary-errors">@ViewBag.ErrorMessage</p>
+
+    </div>
+</div>
+

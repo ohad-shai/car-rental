@@ -1,0 +1,38 @@
+﻿@model IEnumerable<OhadsCarRental.ManufacturerModel>
+
+@{
+    ViewBag.Title = "Manufacturer Models Management - Ohad's Car Rental";
+}
+
+<div class="d-section">
+    <h1 class="d-title">Manufacturer Models Management</h1>
+    <hr class="d-title-separator" />
+
+    <div class="basic-form medium">
+
+        <div class="basic-form-row">
+            <span class="basic-btn medium main">@Html.ActionLink("Back to Menu", "Index", "Admin")</span>
+            <span class="basic-btn medium main right create-fg">@Html.ActionLink("Create New", "Create")</span>
+        </div>
+
+        <div class="basic-form-row">
+            <div class="model-tbl">
+
+                <div class="model-tbl-th col-4">
+                    <span>ID</span>
+                    <span>Model</span>
+                    <span>Manufacturer</span>
+                    <span>Actions</span>
+                </div>
+
+                @foreach (var manufacturerModel in Model)
+                {
+                    @Html.Partial("_ManufacturerModelDetailsPartial", manufacturerModel)
+                }
+            </div>
+        </div>
+
+        <p class="validation-summary-errors">@ViewBag.ErrorMessage</p>
+
+    </div>
+</div>

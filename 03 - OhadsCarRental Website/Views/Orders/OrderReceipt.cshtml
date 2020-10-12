@@ -1,0 +1,39 @@
+﻿@model int
+
+@{
+    ViewBag.Title = "Order Receipt - Ohad's Car Rental";
+}
+
+@section PageStyles {
+    @Styles.Render("~/Content/themes/Orders")
+}
+
+<div class="d-section">
+    <h1 class="d-title">Order Receipt</h1>
+    <hr class="d-title-separator" />
+
+    <div class="basic-form order-receipt">
+
+        <div class="basic-form-row">
+            <p>Thank you for your order.</p>
+            <p>Your order receipt number is: <span class="receipt-num">@Model</span></p>
+            <p>Please keep it, we highly recommend it.</p>
+        </div>
+        <hr />
+        <div class="basic-form-row">
+            <h1 class="title">Where do you want to go now?</h1>
+            <div class="receipt-nav">
+                <div class="basic-btn">
+                    @Html.ActionLink("Orders History", "History", "Orders")
+                </div>
+                <div class="basic-btn">
+                    @Html.ActionLink("Cars", "Watch", "FleetCars")
+                </div>
+                <div class="basic-btn">
+                    @Html.ActionLink("Home", "Index", "Home")
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

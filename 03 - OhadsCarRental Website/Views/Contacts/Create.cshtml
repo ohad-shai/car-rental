@@ -1,0 +1,55 @@
+﻿@model OhadsCarRental.Contact
+
+@{
+    ViewBag.Title = "Contact Us - Ohad's Car Rental";
+}
+
+@section PageStyles {
+    @Styles.Render("~/Content/themes/Contacts")
+}
+
+<div class="section contact-us" data-ix="scale-on-scroll">
+    <h1 class="block-title" data-ix="scale-on-scroll-delay-200">Contact Us</h1>
+    <hr class="block-title-separator" data-ix="hard-scale-on-scroll-delay-500" />
+
+    <div id="contact-us-block" class="basic-form" data-ix="width-adjust">
+
+        @using (Html.BeginForm("ContactUs", "Home", FormMethod.Post, htmlAttributes: new { @id = "contactUsForm" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+
+            @Html.LabelFor(model => model.FirstName)
+            @Html.ValidationMessageFor(model => model.FirstName)
+            @Html.EditorFor(model => model.FirstName)
+
+            @Html.LabelFor(model => model.LastName)
+            @Html.ValidationMessageFor(model => model.LastName)
+            @Html.TextBoxFor(model => model.LastName)
+
+            @Html.LabelFor(model => model.Email)
+            @Html.ValidationMessageFor(model => model.Email)
+            @Html.EditorFor(model => model.Email)
+
+            @Html.LabelFor(model => model.Phone)
+            @Html.ValidationMessageFor(model => model.Phone)
+            @Html.TextBoxFor(model => model.Phone)
+
+            @Html.LabelFor(model => model.Text)
+            @Html.ValidationMessageFor(model => model.Text)
+            @Html.TextAreaFor(model => model.Text, htmlAttributes: new { @placeholder = "Enter your text..." })
+
+            <input type="submit" id="sendContact" value="Send">
+        }
+
+        <p id="submissionStatus" class="validation-summary-errors"></p>
+    </div>
+
+</div>
+
+@section scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/webflow")
+}
+
+

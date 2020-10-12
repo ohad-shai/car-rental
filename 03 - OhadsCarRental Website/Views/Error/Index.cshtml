@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "An error has occurred - please try again later.";
+}
+
+@section PageStyles {
+    @Styles.Render("~/Content/themes/Error")
+}
+
+<div class="error-wrapper" data-ix="fade-in-heading">
+
+    <div class="forbidden-header-wrapper">
+        <div class="forbidden-header">
+            <div class="forbidden-content">
+                <div class="icon error-icon icon-wondering" data-ix="fade-in-heading-5200"></div>
+                <h1 class="error-title error-name" data-ix="drop-from-top-load">What did you do ??!!</h1>
+                <hr class="title-separator" data-ix="hard-scale-on-scroll-delay-500" />
+                <h1 class="error-subtitle" data-ix="hard-scale-on-scroll-delay-1500">An error has occurred.</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="video-wrapper breakn-a-sweat" data-ix="width-adjust">
+        <iframe width="960" height="520" src="https://www.youtube.com/embed/HMUDVMiITOU?autoplay=1" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+</div>
+
+@section scripts {
+    @Scripts.Render("~/bundles/webflow")
+}
+
+

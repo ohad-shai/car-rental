@@ -1,0 +1,67 @@
+﻿@model OhadsCarRental.FleetCarViewModel
+
+@{
+    ViewBag.Title = "Add a new Car to the Fleet - Ohad's Car Rental";
+}
+
+<div class="d-section">
+    <h1 class="d-title">Add a new Car to the Fleet</h1>
+    <hr class="d-title-separator" />
+
+    <div class="basic-form small">
+
+        <div class="basic-form-row">
+            <span class="basic-btn medium">@Html.ActionLink("Back to List", "Index")</span>
+        </div>
+
+        <div class="basic-form-row">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true)
+
+                <fieldset>
+                    <legend>Fleet Car</legend>
+
+                    @Html.LabelFor(model => model.DDLs.SelectedMfrToCarMdl, "Manufacturer")
+                    @Html.ValidationMessageFor(model => model.DDLs.SelectedMfrToCarMdl)
+                    @Html.DropDownListFor(m => m.DDLs.SelectedMfrToCarMdl, new SelectList(Model.DDLs.Manufacturers, "Value", "Text"), "-- Select --")
+
+                    @Html.HiddenFor(model => model.FleetCar.CarModelID)
+                    @Html.LabelFor(model => model.DDLs.SelectedCarMdlFromMfr, "Car Model")
+                    @Html.ValidationMessageFor(model => model.DDLs.SelectedCarMdlFromMfr)
+                    @Html.DropDownListFor(m => m.DDLs.SelectedCarMdlFromMfr, new SelectList(Model.DDLs.CarModels, "Value", "Text"), "-- Select --")
+
+                    @Html.LabelFor(model => model.FleetCar.LicensePlate, "License Plate")
+                    @Html.ValidationMessageFor(model => model.FleetCar.LicensePlate)
+                    @Html.EditorFor(model => model.FleetCar.LicensePlate)
+
+                    @Html.LabelFor(model => model.FleetCar.CurrentMileage, "Current Mileage")
+                    @Html.ValidationMessageFor(model => model.FleetCar.CurrentMileage)
+                    @Html.EditorFor(model => model.FleetCar.CurrentMileage)
+
+                    @Html.LabelFor(model => model.FleetCar.CarImage, "Image")
+                    @Html.ValidationMessageFor(model => model.FleetCar.CarImage)
+                    @Html.EditorFor(model => model.FleetCar.CarImage)
+
+                    <div class="basic-chk">
+                        @Html.LabelFor(model => model.FleetCar.IsProper, "Is Proper")
+                        @Html.ValidationMessageFor(model => model.FleetCar.IsProper)
+                        @Html.CheckBoxFor(model => model.FleetCar.IsProper, new { @checked = "checked" })
+                    </div>
+
+                    <input type="submit" value="Add" />
+                </fieldset>
+            }
+        </div>
+
+        <p class="validation-summary-errors">@ViewBag.ErrorMessage</p>
+
+    </div>
+</div>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/DropDownLists")
+}

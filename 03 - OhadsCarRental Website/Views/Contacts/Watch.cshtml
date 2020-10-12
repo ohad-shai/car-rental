@@ -1,0 +1,36 @@
+﻿@model List<OhadsCarRental.Contact>
+
+@{
+    ViewBag.Title = "Contacts Watch - Ohad's Car Rental";
+}
+
+@section PageStyles {
+    @Styles.Render("~/Content/themes/Contacts")
+}
+
+<div class="d-section">
+    <h1 class="d-title">Contacts Watch</h1>
+    <hr class="d-title-separator" />
+
+    <div class="basic-form">
+
+        <div class="basic-form-row">
+            <div class="model-tbl">
+
+                <div class="model-tbl-th col-3">
+                    <span>Full Name</span>
+                    <span>Text</span>
+                    <span>Date</span>
+                </div>
+
+                @foreach (var item in Model)
+                {
+                    @Html.Partial("_ContactDetailsPartial", item)
+                }
+            </div>
+        </div>
+
+        <p class="validation-summary-errors">@ViewBag.ErrorMessage</p>
+
+    </div>
+</div>

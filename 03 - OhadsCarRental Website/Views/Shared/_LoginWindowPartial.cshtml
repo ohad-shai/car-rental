@@ -1,0 +1,63 @@
+﻿@using OhadsCarRental
+
+@if (Request.IsAuthenticated)
+{
+    <div id="login" class="login-menu">
+        <div class="logout-options">
+            <h5 class="logged-header">Hello, <span>@User.Identity.Name</span>.</h5>
+
+            @if (Roles.IsUserInRole("User")) // Navigation for ==> Users
+            {
+                // For all registered users:
+                @Html.ActionLink("Order a car", "Watch", "FleetCars")
+                @Html.ActionLink("Orders History", "History", "Orders")
+            }
+            else if (Roles.IsUserInRole("Employee")) // Navigation for ==> Employees
+            {
+                // Only for Employees:
+                @Html.ActionLink("Return a car", "CarsToReturn", "Orders")
+                <hr />
+                // For all registered users:
+                @Html.ActionLink("Order a car", "Watch", "FleetCars")
+                @Html.ActionLink("Orders History", "History", "Orders")
+            }
+            else if (Roles.IsUserInRole("Manager")) // Navigation for ==> Managers
+            {
+                // Only for Managers:
+                @Html.ActionLink("Car Models", "Index", "CarModels")
+                @Html.ActionLink("Fleet Cars", "Index", "FleetCars")
+                @Html.ActionLink("Orders", "Watch", "Orders")
+                @Html.ActionLink("Contacts", "Watch", "Contacts")
+                <hr />
+                // For all registered users:
+                @Html.ActionLink("Order a car", "Watch", "FleetCars")
+                @Html.ActionLink("Orders History", "History", "Orders")
+            }
+            else if (Roles.IsUserInRole("Admin")) // Navigation for ==> Admins
+            {
+                // Only for Admins:
+                @Html.ActionLink("Admin Management", "Index", "Admin")
+                <hr />
+                // From Managers:
+                @Html.ActionLink("Car Models", "Index", "CarModels")
+                @Html.ActionLink("Fleet Cars", "Index", "FleetCars")
+                @Html.ActionLink("Orders", "Watch", "Orders")
+                @Html.ActionLink("Contacts", "Watch", "Contacts")
+                <hr />
+                // All from other roles:
+                @Html.ActionLink("Order a car", "Watch", "FleetCars")
+                @Html.ActionLink("Orders History", "History", "Orders")
+                @Html.ActionLink("Return a car", "CarsToReturn", "Orders")
+            }
+            <hr />
+            @Html.ActionLink("Profile", "UserProfile", "Account")
+            @Html.ActionLink("Log out", "Logout", "Account")
+        </div>
+    </div>
+}
+else
+{
+    <div id="login" class="login-menu">
+        @Html.Partial("_LoginFormPartial", new LoginViewModel())
+    </div>
+}

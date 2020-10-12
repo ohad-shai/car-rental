@@ -1,0 +1,61 @@
+﻿@{
+    ViewBag.Title = "Help - Ohad's Car Rental";
+}
+
+@section PageStyles {
+    @Styles.Render("~/Content/themes/FunnyPages")
+}
+
+<div class="funny-wrapper" data-ix="fade-in-heading">
+
+    <div class="funny-header-wrapper theme-help">
+        <div class="funny-header bg-help">
+            <div class="funny-content">
+                <div class="bunchie-wrapper" data-ix="drop-from-top-load">
+                    <img src="~/Content/images/site/Bunchie.gif" alt="Bunchie" />
+                </div>
+                <h1 class="funny-name" data-ix="fade-in-heading"></h1>
+                <h1 class="funny-title" data-ix="fade-in-heading">Do you need help?</h1>
+                <hr class="title-separator" data-ix="hard-scale-on-scroll-delay-500" />
+                <h1 class="funny-title" data-ix="hard-scale-on-scroll-delay-1500">Scroll down for "help"...</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="scroll-wrapper">
+        <h1 class="funny-title" data-ix="fade-in-heading-4000">Scroll down for "help"</h1>
+        <hr class="title-separator" data-ix="fade-in-heading-5000" />
+    </div>
+
+    @for (int i = 0; i < 50; i++)
+    {
+        <div class="list-bunchie" data-ix="hard-scale-on-scroll-delay-500">
+            <img src="~/Content/images/site/Bunchie.gif" alt="Bunchie" />
+            <img src="~/Content/images/site/Bunchie.gif" alt="Bunchie" />
+            <img src="~/Content/images/site/Bunchie.gif" alt="Bunchie" />
+            <img src="~/Content/images/site/Bunchie.gif" alt="Bunchie" />
+            <img src="~/Content/images/site/Bunchie.gif" alt="Bunchie" />
+            <img src="~/Content/images/site/Bunchie.gif" alt="Bunchie" />
+            <img src="~/Content/images/site/Bunchie.gif" alt="Bunchie" />
+            <img src="~/Content/images/site/Bunchie.gif" alt="Bunchie" />
+            <img src="~/Content/images/site/Bunchie.gif" alt="Bunchie" />
+            <img src="~/Content/images/site/Bunchie.gif" alt="Bunchie" />
+        </div>
+    }
+
+    <div class="scroll-end-wrapper">
+        <h1 class="funny-title" data-ix="hard-scale-on-scroll-delay-500">Finally! for help, click "<a href="~/Help">Help</a>"</h1>
+        <hr class="title-separator" data-ix="hard-scale-on-scroll-delay-500" />
+    </div>
+
+
+    <div class="video-wrapper main-video" data-ix="width-adjust">
+        <iframe width="960" height="520" src="https://www.youtube.com/embed/9yLx_2XspSY?autoplay=1" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+</div>
+
+@section scripts {
+    @Scripts.Render("~/bundles/webflow")
+}
+

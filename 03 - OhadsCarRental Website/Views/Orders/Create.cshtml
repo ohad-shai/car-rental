@@ -1,0 +1,79 @@
+﻿@model OhadsCarRental.OrderViewModel
+
+@{
+    ViewBag.Title = "Create a new order - Ohad's Car Rental";
+}
+
+@section PageStyles {
+    @Styles.Render("~/Content/themes/Orders")
+}
+
+<div class="d-section car-order">
+    <h1 class="d-title">Create Order</h1>
+    <hr class="d-title-separator" />
+
+    <div class="basic-form receipt">
+
+        <p class="validation-summary-errors">@ViewBag.ErrorMessage</p>
+
+        <div class="basic-form-row">
+            <span class="basic-btn small">@Html.ActionLink("Back to Cars", "Search", "FleetCars")</span>
+        </div>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+
+            <fieldset id="orderForm">
+                <legend>Car Order</legend>
+
+                @Html.HiddenFor(model => model.CarModelName)
+                @Html.HiddenFor(model => model.CarImage)
+                @Html.HiddenFor(model => model.DailyPrice)
+                @Html.HiddenFor(model => model.DayDelayPrice)
+
+                <div class="car-image-wrapper">
+                    <img src="~/Content/images/@Model.CarImage" alt="@Model.CarModelName" />
+                </div>
+
+                <div class="car-rental-dates">
+                    <div>
+                        @Html.LabelFor(model => model.StartDate, "Pick Up Date:")
+                        @Html.ValidationMessageFor(model => model.StartDate)
+                        @Html.EditorFor(model => model.StartDate)
+                    </div>
+                    <div>
+                        @Html.LabelFor(model => model.ReturnDate, "Return Date:")
+                        @Html.ValidationMessageFor(model => model.ReturnDate)
+                        @Html.EditorFor(model => model.ReturnDate)
+                    </div>
+                </div>
+
+                <div class="car-details">
+                    <p>Car Model: <span>@Model.CarModelName</span></p>
+                    <p>Daily Price: <span id="dailyPrice">@string.Format("{0:c}", Model.DailyPrice)</span></p>
+                    <p>Day Delay Price: <span>@string.Format("{0:c}", Model.DayDelayPrice)</span></p>
+                    <hr />
+                    <p>Pick Up Date: <span id="sumStartDate"></span></p>
+                    <p>Return Date: <span id="sumReturnDate"></span></p>
+                    <hr />
+                    <p>Total Price: <span id="totalPrice"></span></p>
+                    <p>Total Days: <span id="totalDays"></span></p>
+                </div>
+
+                <input type="submit" value="Order" />
+                <p class="order-terms">By clicking Order you accept our <a href="~/Terms" target="_blank">Terms and Conditions</a>.</p>
+
+            </fieldset>
+        }
+    </div>
+</div>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/OrderCreate")
+    @Scripts.Render("~/bundles/OrderValidations")
+}
+

@@ -1,0 +1,53 @@
+﻿@model OhadsCarRental.FleetCar
+
+@{
+    ViewBag.Title = "Fleet Car Details - Ohad's Car Rental";
+
+    // Sets the car model name title:
+    string carModelName = string.Format("{0} {1} {2} {3}",
+                                        Model.CarModel.ManufacturerModel.Manufacturer.ManufacturerName,
+                                        Model.CarModel.ManufacturerModel.ManufacturerModelName,
+                                        Model.CarModel.ProductionYear,
+                                        Model.CarModel.ManualGear ? "Manual" : "Automatic");
+}
+
+<div class="d-section">
+    <h1 class="d-title">Fleet Car Details</h1>
+    <hr class="d-title-separator" />
+
+    <div class="basic-form">
+
+        <div class="basic-form-row">
+            <span class="basic-btn medium main">@Html.ActionLink("Back to List", "Index")</span>
+            <span class="basic-btn medium right main edit-fg">@Html.ActionLink("Edit", "Edit", new { id = Model.LicensePlate })</span>
+        </div>
+
+        <div class="basic-form-row">
+            <fieldset>
+                <legend>Fleet Car</legend>
+
+                <div class="basic-form-main-p">
+                    <p>License Plate: <span>@Model.LicensePlate</span></p>
+                    <p>Car Model: <span>@carModelName</span></p>
+                    <p>Current Mileage: <span>@string.Format("{0:n0} km", Model.CurrentMileage)</span></p>
+                    <p>Image: <span><a href="~/Content/images/@Model.CarImage" target="_blank">image</a></span></p>
+                    <p>
+                        Is Proper:
+                        @if (Model.IsProper)
+                        {
+                            <span>Yes</span>
+                        }
+                        else
+                        {
+                            <span>No</span>
+                        }
+                    </p>
+                </div>
+            </fieldset>
+        </div>
+
+        <p class="validation-summary-errors">@ViewBag.ErrorMessage</p>
+
+    </div>
+</div>
+

@@ -1,0 +1,58 @@
+﻿@model OhadsCarRental.FleetCar
+
+@{
+    ViewBag.Title = "Delete a Fleet Car Failed - Ohad's Car Rental";
+
+    // Sets the car model name title:
+    string carModelName = string.Format("{0} {1} {2} {3}",
+                                        Model.CarModel.ManufacturerModel.Manufacturer.ManufacturerName,
+                                        Model.CarModel.ManufacturerModel.ManufacturerModelName,
+                                        Model.CarModel.ProductionYear,
+                                        Model.CarModel.ManualGear ? "Manual" : "Automatic");
+}
+
+<div class="d-section">
+    <h1 class="d-title">Delete a Fleet Car Failed</h1>
+    <hr class="d-title-separator" />
+
+    <div class="basic-form">
+
+        <div class="basic-form-row">
+            <span class="basic-btn medium">@Html.ActionLink("Back to List", "Index")</span>
+        </div>
+
+        <div class="basic-form-row">
+            <h3 class="del-warning">Can't delete this, because other related data use it.</h3>
+            <h3 class="basic-form-title">You can proceed to a "Collective Delete", which is not recommended.</h3>
+
+            <div class="basic-form-main-p">
+                <p>License Plate: <span>@Model.LicensePlate</span></p>
+                <p>Car Model: <span>@carModelName</span></p>
+                <p>Current Mileage: <span>@string.Format("{0:n0} km", Model.CurrentMileage)</span></p>
+                <p>Image: <span><a href="~/Content/images/@Model.CarImage" target="_blank">image</a></span></p>
+                <p>
+                    Is Proper:
+                    @if (Model.IsProper)
+                    {
+                        <span>Yes</span>
+                    }
+                    else
+                    {
+                        <span>No</span>
+                    }
+                </p>
+            </div>
+
+            <h3 class="basic-form-title">* All related data will be deleted too.</h3>
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <input type="submit" value="Proceed" class="attn-lvl-m" />
+            }
+        </div>
+
+        <p class="validation-summary-errors">@ViewBag.ErrorMessage</p>
+
+    </div>
+</div>

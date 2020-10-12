@@ -1,0 +1,45 @@
+﻿@model OhadsCarRental.Manufacturer
+
+@{
+    ViewBag.Title = "Edit a Manufacturer - Ohad's Car Rental";
+}
+
+<div class="d-section">
+    <h1 class="d-title">Edit a Manufacturer</h1>
+    <hr class="d-title-separator" />
+
+    <div class="basic-form small">
+
+        <div class="basic-form-row">
+            <span class="basic-btn medium">@Html.ActionLink("Back to List", "Index")</span>
+        </div>
+
+        <div class="basic-form-row">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true)
+
+                <fieldset>
+                    <legend>Manufacturer</legend>
+
+                    @Html.HiddenFor(model => model.ManufacturerID)
+
+                    @Html.LabelFor(model => model.ManufacturerName, "Manufacturer Name")
+                    @Html.ValidationMessageFor(model => model.ManufacturerName)
+                    @Html.EditorFor(model => model.ManufacturerName)
+
+                    <input type="submit" value="Save Changes" class="attn-lvl-m" />
+                </fieldset>
+            }
+        </div>
+
+        <p class="validation-summary-errors">@ViewBag.ErrorMessage</p>
+
+    </div>
+</div>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

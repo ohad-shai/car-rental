@@ -1,0 +1,37 @@
+﻿@model OhadsCarRental.FleetCar
+
+@{
+    ViewBag.Title = "Car Details - Ohad's Car Rental";
+}
+
+@section PageStyles {
+    @Styles.Render("~/Content/themes/Orders")
+}
+
+<div class="d-section car-details-wrapper">
+    <h1 class="d-title">Car Details</h1>
+    <hr class="d-title-separator" />
+
+    <div class="basic-form receipt">
+
+        <p class="validation-summary-errors">@ViewBag.ErrorMessage</p>
+
+        <div class="basic-form-row">
+            <span class="basic-btn small"><a id="backBtn">Back to Cars</a></span>
+        </div>
+
+        <div class="car-image-wrapper">
+            <img src="~/Content/images/@Model.CarImage" />
+        </div>
+
+        <div class="car-details">
+            <p>Manufacturer: <span>@Model.CarModel.ManufacturerModel.Manufacturer.ManufacturerName</span></p>
+            <p>Model: <span>@Model.CarModel.ManufacturerModel.ManufacturerModelName</span></p>
+            <p>Year: <span>@Model.CarModel.ProductionYear</span></p>
+            <p>Gear: <span>@string.Format("{0}", Model.CarModel.ManualGear ? "Manual" : "Automatic")</span></p>
+            <hr />
+            <p>Daily Price: <span id="dailyPrice">@string.Format("{0:c}", Model.CarModel.DailyPrice)</span></p>
+            <p>Day Delay Price: <span>@string.Format("{0:c}", Model.CarModel.DayDelayPrice)</span></p>
+        </div>
+    </div>
+</div>

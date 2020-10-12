@@ -1,0 +1,28 @@
+﻿@model OhadsCarRental.LoginViewModel
+
+@{
+    ViewBag.Title = "Login - Ohad's Car Rental";
+}
+
+@section PageStyles {
+    @Styles.Render("~/Content/themes/Account")
+}
+
+<div class="section login" data-ix="scale-on-scroll">
+    <h1 class="block-title">Log in</h1>
+    <hr class="block-title-separator" />
+
+    <div class="login-wrapper">
+
+        <div id="login-block" class="basic-form inline-form">
+            @Html.Partial("_LoginFormPartial", Model)
+        </div>
+
+    </div>
+</div>
+
+@section scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/webflow")
+}
+

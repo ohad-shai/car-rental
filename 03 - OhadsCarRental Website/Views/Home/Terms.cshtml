@@ -1,0 +1,53 @@
+﻿@{
+    ViewBag.Title = "Terms and Conditions - Ohad's Car Rental";
+}
+
+@section PageStyles {
+    @Styles.Render("~/Content/themes/FunnyPages")
+}
+
+<div class="funny-wrapper" data-ix="fade-in-heading">
+
+    <div class="funny-header-wrapper theme-terms">
+        <div class="funny-header bg-terms">
+            <div class="funny-content">
+                <div class="icon funny-icon icon-terms" data-ix="drop-from-top-load"></div>
+                <h1 class="funny-name" data-ix="fade-in-heading"></h1>
+                <h1 class="funny-title" data-ix="fade-in-heading">Terms and Conditions</h1>
+                <hr class="title-separator" data-ix="hard-scale-on-scroll-delay-500" />
+                <h1 class="funny-name" data-ix="hard-scale-on-scroll-delay-1500">Ohad's Car Rental</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="terms-content" data-ix="fade-in-heading-4000">
+        <h1 class="funny-title" data-ix="fade-in-heading-5200">Ohad's Car Rental - John Bryce college project</h1>
+        <hr class="title-separator" data-ix="fade-in-heading-5000" />
+        <ol class="terms-details">
+            <li>This site, is a project for <a href="http://www.johnbryce.co.il/%D7%90%D7%95%D7%93%D7%95%D7%AA-%D7%92%D7%95%D7%9F-%D7%91%D7%A8%D7%99%D7%99%D7%A1-%D7%94%D7%93%D7%A8%D7%9B%D7%94" target="_blank">John Bryce</a> college, developed by Ohad Shai, in December 2015.</li>
+            <li>This site, is not a real site, with active users, orders, contents etc.</li>
+            <li>"Ohad's Car Rental" is not an official brand, or a company.</li>
+            <li>All the data in this project is fake, and entered for illustrative purposes only.</li>
+            <li>You may not copy any content from this project.</li>
+            <li>You may not take any action in this site with seriously.</li>
+            <li>This "Terms and Conditions", is not even official, all is fake, for illustrative purposes only.</li>
+            <li>I tried to avoid bugs as much as I can, but no program has no bugs. If you find any bug, please send me details through the <a href="~/ContactUs" target="_blank">Contact Us</a> page.</li>
+            <li>This last one is not a term, but I want to thank my teachers during this wonderful course: <span class="underline">Amichai Sichel</span>, and <span class="underline">Assaf Finkelshtein</span>, for being a great teachers all over the course cycle.</li>
+        </ol>
+    </div>
+
+    <div class="my-picture">
+        <h1 class="funny-title" data-ix="hard-scale-on-scroll-delay-1500">This is me</h1>
+        <hr class="title-separator" data-ix="hard-scale-on-scroll-delay-500" />
+        <img src="~/Content/images/site/ohad-shai-profile.jpg" alt="Ohad Shai" data-ix="hard-scale-on-scroll-delay-1500" />
+    </div>
+
+    <div class="video-wrapper main-video" data-ix="width-adjust">
+        <iframe width="960" height="520" src="https://www.youtube.com/embed/dX3k_QDnzHE?autoplay=1" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+
+@section scripts {
+    @Scripts.Render("~/bundles/webflow")
+}
+

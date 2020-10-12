@@ -1,0 +1,31 @@
+﻿@model OhadsCarRental.Manufacturer
+
+@{
+    ViewBag.Title = "Manufacturer Details - Ohad's Car Rental";
+}
+
+<div class="d-section">
+    <h1 class="d-title">Manufacturer Details</h1>
+    <hr class="d-title-separator" />
+
+    <div class="basic-form">
+
+        <div class="basic-form-row">
+            <span class="basic-btn medium main">@Html.ActionLink("Back to List", "Index")</span>
+            <span class="basic-btn medium right main edit-fg">@Html.ActionLink("Edit", "Edit", new { id = Model.ManufacturerID })</span>
+        </div>
+
+        <div class="basic-form-row">
+            <div class="basic-form-main-p">
+                <p>Manufacturer Name: <span>@Model.ManufacturerName</span></p>
+            </div>
+        </div>
+
+        <p class="validation-summary-errors">@ViewBag.ErrorMessage</p>
+
+    </div>
+</div>
+
+
+
+

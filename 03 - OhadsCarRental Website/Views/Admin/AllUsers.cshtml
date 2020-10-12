@@ -1,0 +1,36 @@
+﻿@model List<OhadsCarRental.User>
+
+@{
+    ViewBag.Title = "Users Management - Ohad's Car Rental";
+}
+
+<div class="d-section">
+    <h1 class="d-title">Users Management</h1>
+    <hr class="d-title-separator" />
+
+    <div class="basic-form">
+
+        <div class="basic-form-row">
+            <span class="basic-btn medium">@Html.ActionLink("Back to Menu", "Index", "Admin")</span>
+        </div>
+
+        <div class="basic-form-row">
+            <div class="model-tbl">
+
+                <div class="model-tbl-th col-3">
+                    <span>Username</span>
+                    <span>Role</span>
+                    <span>Actions</span>
+                </div>
+
+                @foreach (var user in Model)
+                {
+                    @Html.Partial("_UserDetailsPartial", user)
+                }
+            </div>
+        </div>
+
+        <p class="validation-summary-errors">@ViewBag.ErrorMessage</p>
+
+    </div>
+</div>

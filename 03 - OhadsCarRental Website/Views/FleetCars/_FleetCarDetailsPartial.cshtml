@@ -1,0 +1,52 @@
+﻿@model OhadsCarRental.FleetCar
+
+@{
+    // Sets the car model name title:
+    string carModelName = string.Format("{0} {1} {2} {3}",
+                                        Model.CarModel.ManufacturerModel.Manufacturer.ManufacturerName,
+                                        Model.CarModel.ManufacturerModel.ManufacturerModelName,
+                                        Model.CarModel.ProductionYear,
+                                        Model.CarModel.ManualGear ? "Manual" : "Automatic");
+}
+
+<div class="model-tbl-tr col-4">
+    <input type="hidden" value="@Model.LicensePlate" />
+    <span>@Model.LicensePlate</span>
+    <span>@carModelName</span>
+    <span>@string.Format("{0:n0} km", Model.CurrentMileage)</span>
+    @if (Model.IsProper)
+    {
+        <span>Yes</span>
+    }
+    else
+    {
+        <span>No</span>
+    }
+</div>
+
+@* Full fleet car details (after opened row) *@
+<div class="model-details-block">
+    <img src="~/Content/images/@Model.CarImage" />
+    <p>License Plate: <span>@Model.LicensePlate</span></p>
+    <p>Car Model: <span>@carModelName</span></p>
+    <p>Current Mileage: <span>@string.Format("{0:n0} km", Model.CurrentMileage)</span></p>
+    <p>Image: <a href="~/Content/images/@Model.CarImage" target="_blank">image</a></p>
+    <p>
+        Is Proper:
+        @if (Model.IsProper)
+        {
+            <span>Yes</span>
+        }
+        else
+        {
+            <span>No</span>
+        }
+    </p>
+    <p>
+        <span class="basic-btn rud-btns-fg">
+            @Html.ActionLink("Edit", "Edit", new { id = Model.LicensePlate })
+            @Html.ActionLink("Details", "Details", new { id = Model.LicensePlate })
+            @Html.ActionLink("Delete", "Delete", new { id = Model.LicensePlate })
+        </span>
+    </p>
+</div>

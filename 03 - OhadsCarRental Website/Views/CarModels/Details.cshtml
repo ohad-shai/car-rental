@@ -1,0 +1,46 @@
+﻿@model OhadsCarRental.CarModel
+
+@{
+    ViewBag.Title = "Car Model Details - Ohad's Car Rental";
+}
+
+<div class="d-section">
+    <h1 class="d-title">Car Model Details</h1>
+    <hr class="d-title-separator" />
+
+    <div class="basic-form">
+
+        <div class="basic-form-row">
+            <span class="basic-btn medium main">@Html.ActionLink("Back to List", "Index")</span>
+            <span class="basic-btn medium right main edit-fg">@Html.ActionLink("Edit", "Edit", new { id = Model.CarModelID })</span>
+        </div>
+
+        <div class="basic-form-row">
+            <fieldset>
+                <legend>Car Model</legend>
+
+                <div class="basic-form-main-p">
+                    <p>Model: <span>@Model.ManufacturerModel.Manufacturer.ManufacturerName @Model.ManufacturerModel.ManufacturerModelName</span></p>
+                    <p>Production Year: <span>@Model.ProductionYear</span></p>
+                    <p>
+                        Gear:
+                        @if (Model.ManualGear)
+                        {
+                            <span>Manual</span>
+                        }
+                        else
+                        {
+                            <span>Automatic</span>
+                        }
+                    </p>
+                    <p>Daily Price: <span>@Model.DailyPrice</span></p>
+                    <p>Day Delay Price: <span>@Model.DayDelayPrice</span></p>
+                </div>
+            </fieldset>
+        </div>
+
+        <p class="validation-summary-errors">@ViewBag.ErrorMessage</p>
+
+    </div>
+</div>
+

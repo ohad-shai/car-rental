@@ -1,0 +1,43 @@
+﻿@model OhadsCarRental.CarModel
+
+<div class="model-tbl-tr col-5">
+    <input type="hidden" value="@Model.CarModelID" />
+    <span>@Model.ManufacturerModel.Manufacturer.ManufacturerName @Model.ManufacturerModel.ManufacturerModelName</span>
+    <span>@Model.ProductionYear</span>
+    @if (Model.ManualGear)
+    {
+        <span>Manual</span>
+    }
+    else
+    {
+        <span>Automatic</span>
+    }
+    <span>@string.Format("{0:c}", Model.DailyPrice)</span>
+    <span>@string.Format("{0:c}", Model.DayDelayPrice)</span>
+</div>
+
+@* Full car model details (after opened row) *@
+<div class="model-details-block">
+    <p>Manufacturer: <span>@Model.ManufacturerModel.Manufacturer.ManufacturerName</span></p>
+    <p>Manufacturer Model: <span>@Model.ManufacturerModel.ManufacturerModelName</span></p>
+    <p>Production Year: <span>@Model.ProductionYear</span></p>
+    <p> Gear: 
+        @if (Model.ManualGear)
+        {
+            <span>Manual</span>
+        }
+        else
+        {
+            <span>Automatic</span>
+        }
+    </p>
+    <p>Daily Price: <span>@string.Format("{0:c}", Model.DailyPrice)</span></p>
+    <p>Day Delay Price: <span>@string.Format("{0:c}", Model.DayDelayPrice)</span></p>
+    <p>
+        <span class="basic-btn rud-btns-fg">
+            @Html.ActionLink("Edit", "Edit", new { id = Model.CarModelID })
+            @Html.ActionLink("Details", "Details", new { id = Model.CarModelID })
+            @Html.ActionLink("Delete", "Delete", new { id = Model.CarModelID })
+        </span>
+    </p>
+</div>

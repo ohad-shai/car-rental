@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Admin Management Options - Ohad's Car Rental";
+}
+
+<div class="d-section">
+    <h1 class="d-title">Admin Management Options</h1>
+    <hr class="d-title-separator" />
+
+    <div class="basic-form">
+
+        <div class="basic-form-row">
+            <div class="basic-btn large">
+                @Html.ActionLink("Manufacturers", "Index", "Manufacturers")
+            </div>
+            <div class="basic-btn large">
+                @Html.ActionLink("Manufacturer Models", "Index", "ManufacturerModels")
+            </div>
+            <div class="basic-btn large">
+                @Html.ActionLink("Users", "AllUsers", "Admin")
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+

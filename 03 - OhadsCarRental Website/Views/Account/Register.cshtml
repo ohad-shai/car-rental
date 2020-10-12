@@ -1,0 +1,93 @@
+﻿@model OhadsCarRental.RegisterViewModel
+
+@{
+    ViewBag.Title = "Create an account - Ohad's Car Rental";
+}
+
+@section PageStyles {
+    @Styles.Render("~/Content/themes/Account")
+}
+
+<div class="section register" data-ix="scale-on-scroll">
+    <h1 class="block-title">Create an account</h1>
+    <hr class="block-title-separator" />
+
+    <div class="register-wrapper">
+        <div id="register-information" class="basic-form inline-form">
+
+            <h1 class="basic-form-title">Register and start to rent a car.</h1>
+            <hr class="separator" />
+
+            <div class="reg-info-row">
+                <div class="icon reg-info-icons icon-search"></div>
+                <h2>Search</h2>
+                <p>from a large fleet of vehicles.</p>
+            </div>
+            <div class="reg-info-row">
+                <div class="icon reg-info-icons icon-barcode"></div>
+                <h2>Rent</h2>
+                <p>the car you like.</p>
+            </div>
+            <div class="reg-info-row">
+                <div class="icon reg-info-icons icon-eye"></div>
+                <h2>Watch</h2>
+                <p>history of your rentals.</p>
+            </div>
+
+            <hr class="separator" />
+
+        </div>
+        <div id="register-block" class="basic-form inline-form">
+
+            @using (Html.BeginForm("Register", "Account", FormMethod.Post, htmlAttributes: new { @id = "registerForm" }))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true)
+
+                @Html.LabelFor(model => model.Username)
+                @Html.ValidationMessageFor(model => model.Username)
+                @Html.EditorFor(model => model.Username)
+
+                @Html.LabelFor(model => model.Password)
+                @Html.ValidationMessageFor(model => model.Password)
+                @Html.PasswordFor(model => model.Password)
+
+                @Html.LabelFor(model => model.ConfirmPassword)
+                @Html.ValidationMessageFor(model => model.ConfirmPassword)
+                @Html.PasswordFor(model => model.ConfirmPassword)
+
+                @Html.LabelFor(model => model.FirstName)
+                @Html.ValidationMessageFor(model => model.FirstName)
+                @Html.EditorFor(model => model.FirstName)
+
+                @Html.LabelFor(model => model.LastName)
+                @Html.ValidationMessageFor(model => model.LastName)
+                @Html.TextBoxFor(model => model.LastName)
+
+                @Html.LabelFor(model => model.IdentityNumber)
+                @Html.ValidationMessageFor(model => model.IdentityNumber)
+                @Html.EditorFor(model => model.IdentityNumber)
+
+                @Html.LabelFor(model => model.Email)
+                @Html.ValidationMessageFor(model => model.Email)
+                @Html.EditorFor(model => model.Email)
+
+                @Html.LabelFor(model => model.BirthDate)
+                @Html.ValidationMessageFor(model => model.BirthDate)
+                @Html.EditorFor(model => model.BirthDate)
+
+                <input type="submit" id="sendRegister" value="Register">
+            }
+
+            <p id="registerStatus" class="validation-summary-errors">@ViewBag.ErrorMessage</p>
+        </div>
+    </div>
+
+</div>
+
+@section scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/webflow")
+    @Scripts.Render("~/bundles/RegisterValidations")
+}
+

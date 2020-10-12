@@ -1,0 +1,38 @@
+﻿@model OhadsCarRental.ManufacturerModel
+
+@{
+    ViewBag.Title = "Delete a Manufacturer Model Failed - Ohad's Car Rental";
+}
+
+<div class="d-section">
+    <h1 class="d-title">Delete a Manufacturer Model Failed</h1>
+    <hr class="d-title-separator" />
+
+    <div class="basic-form small">
+
+        <div class="basic-form-row">
+            <span class="basic-btn medium">@Html.ActionLink("Back to List", "Index")</span>
+        </div>
+
+        <div class="basic-form-row">
+            <h3 class="del-warning">Can't delete this, because other related data use it.</h3>
+            <h3 class="basic-form-title">You can proceed to a "Collective Delete", which is not recommended.</h3>
+
+            <div class="basic-form-main-p">
+                <p>Model: <span>@Model.ManufacturerModelName</span></p>
+                <p>Manufacturer: <span>@Model.Manufacturer.ManufacturerName</span></p>
+            </div>
+
+            <h3 class="basic-form-title">* All related data will be deleted too.</h3>
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <input type="submit" value="Proceed" class="attn-lvl-m" />
+            }
+        </div>
+
+        <p class="validation-summary-errors">@ViewBag.ErrorMessage</p>
+
+    </div>
+</div>

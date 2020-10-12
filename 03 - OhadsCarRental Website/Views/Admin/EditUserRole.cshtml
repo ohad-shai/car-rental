@@ -1,0 +1,41 @@
+﻿@model OhadsCarRental.EditUserRoleViewModel
+
+@{
+    ViewBag.Title = "Edit User's Role - Ohad's Car Rental";
+}
+
+<div class="d-section">
+    <h1 class="d-title">Users Management - Edit Role</h1>
+    <hr class="d-title-separator" />
+
+    <div class="basic-form small">
+        
+        <div class="basic-form-row">
+            <span class="basic-btn medium">@Html.ActionLink("Back to Users", "AllUsers", "Admin")</span>
+        </div>
+
+        <div class="basic-form-row">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true)
+
+                <fieldset>
+                    <legend>User</legend>
+
+                    @Html.HiddenFor(model => model.Username)
+
+                    <div class="basic-form-main-p">
+                        <p>Username: <span>@Model.Username</span></p>
+                        <p>Role: <span>@Html.DropDownList("RoleName")</span></p>
+                    </div>
+
+                    <input type="submit" value="Save Changes" class="attn-lvl-m" />
+                </fieldset>
+            }
+        </div>
+
+        <p class="validation-summary-errors">@ViewBag.ErrorMessage</p>
+
+    </div>
+</div>

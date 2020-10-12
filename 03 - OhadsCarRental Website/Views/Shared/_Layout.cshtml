@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    @Styles.Render("~/Content/site")
+    @RenderSection("PageStyles", required: false)
+</head>
+<body>
+
+    <div class="wrapper">
+
+        <!-- #region Header -->
+
+        <header id="main-header" class="no-select">
+            <div class="header-content">
+                <h1 id="main-logo">
+                    @Html.ActionLink("Ohad's Car Rental", "Index", "Home")
+                </h1>
+
+                <div id="header-options">
+
+                    <!-- Log in button -->
+                    <div id="btn-sign-in" class="header-btn">
+                        <div class="icon icon-sign-in fade-2s"></div>
+                        @Html.Partial("_LoginPartial")
+                    </div>
+
+                    <!-- Menu button -->
+                    <div id="btn-menu" class="header-btn">
+                        <div class="icon icon-menu fade-2s"></div>
+                    </div>
+
+                </div>
+
+                <!-- Login Window -->
+                @Html.Partial("_LoginWindowPartial")
+
+            </div>
+        </header>
+
+        <!-- #endregion -->
+        <!-- #region Content -->
+
+        <div class="content">
+
+            <aside class="sidebar-wrapper">
+                <div class="sidebar no-select">
+
+                    <h2>Menu</h2>
+                    <hr class="separator" />
+
+                    <div class="controls">
+                        <!-- Search -->
+                        @Html.Partial("_SearchPartial")
+                    </div>
+
+                    <nav class="site-nav">
+                        <!-- Navigation -->
+                        @Html.Partial("_NavigationPartial")
+                    </nav>
+
+                </div>
+            </aside>
+
+            <section class="actualContent">
+                @RenderBody()
+            </section>
+
+        </div>
+
+        <!-- #endregion -->
+        <!-- #region Footer -->
+
+        <footer>
+            <div class="footerContent">
+                <div class="footerContentIntro">
+                    <img id="footerLogo" src="~/Content/images/site/OhadsCarRentalLogo.png" alt="Ohad's Car Rental Logo" />
+                    <div class="footerCallCentre">
+                        <div class="footerCallCentreMsg">
+                            <div class="icon icon-phone"></div>
+                            See our opening times
+                            <a href="~/About">here</a>
+                        </div>
+                        <div class="footerCallCentrePhone">Call us: 05 465 78 54</div>
+                    </div>
+                    <img id="nortonLogo" src="~/Content/images/site/norton_sm.png" alt="Norton Secured" />
+                </div>
+                <div class="separatorVertical"></div>
+                <div class="footerContentLinks">
+                    <h4>Help & Information</h4>
+                    <ul>
+                        <li>@Html.ActionLink("About Us", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contact Us", "Create", "Contacts")</li>
+                        <li>@Html.ActionLink("Help", "Help", "Home")</li>
+                        <li>@Html.ActionLink("Privacy Policy", "Privacy", "Home")</li>
+                        <li>@Html.ActionLink("Terms and Conditions", "Terms", "Home")</li>
+                    </ul>
+                </div>
+                <div class="separatorVertical"></div>
+                <div class="footerContentLinks">
+                    <h4>Recommended Links</h4>
+                    <ul>
+                        <li><a href="http://www.toyota.com/" target="_blank">Toyota</a></li>
+                        <li><a href="http://www.mazda.com/" target="_blank">Mazda</a></li>
+                        <li><a href="http://www.chevrolet.com/" target="_blank">Chevrolet</a></li>
+                        <li><a href="http://www.ford.com/" target="_blank">Ford</a></li>
+                        <li><a href="http://www.nissanusa.com/" target="_blank">Nissan</a></li>
+                        <li><a href="http://www.kia.com/" target="_blank">Kia</a></li>
+                        <li><a href="http://www.bmw.com/" target="_blank">BMW</a></li>
+                        <li><a href="http://www.vw.com/" target="_blank">Volkswagen</a></li>
+                        <li><a href="http://www.honda.com/" target="_blank">Honda</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="http://www.cadillac.com/" target="_blank">Cadillac</a></li>
+                        <li><a href="http://www.chrysler.com/" target="_blank">Chrysler</a></li>
+                        <li><a href="https://www.hyundaiusa.com/" target="_blank">Hyundai</a></li>
+                        <li><a href="http://www.dodge.com/" target="_blank">Dodge</a></li>
+                        <li><a href="http://www.jeep.com/" target="_blank">Jeep</a></li>
+                        <li><a href="http://www.mitsubishi-motors.com/" target="_blank">Mitsubishi</a></li>
+                        <li><a href="http://www.skoda-auto.com/" target="_blank">Skoda</a></li>
+                    </ul>
+                </div>
+                <div class="separatorVertical"></div>
+            </div>
+            <div class="subFooter">
+                <hr class="separator" />
+                <div class="copyright">&copy; All rights reserved to Ohad Shai. | A project for John Bryce college.</div>
+                <div class="subFooterLogos">
+                    <ul class="subFooterLogosList">
+                        <li><img src="~/Content/images/site/Toyota_Logo.png" alt="Toyota"></li>
+                        <li><img src="~/Content/images/site/Mazda_Logo.png" alt="Mazda"></li>
+                        <li><img src="~/Content/images/site/Kia_Logo.png" alt="Kia"></li>
+                        <li><img src="~/Content/images/site/Nissan_Logo.png" alt="Nissan"></li>
+                        <li><img src="~/Content/images/site/Ford_Logo.png" alt="Ford"></li>
+                        <li><img src="~/Content/images/site/Honda_Logo.png" alt="Honda"></li>
+                    </ul>
+                </div>
+            </div>
+
+        </footer>
+
+        <!-- #endregion -->
+
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/OhadsCarRental")
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+﻿@model OhadsCarRental.Manufacturer
+
+@{
+    ViewBag.Title = "Delete a Manufacturer Collective - Ohad's Car Rental";
+}
+
+<div class="d-section">
+    <h1 class="d-title">Delete a Manufacturer Collective</h1>
+    <hr class="d-title-separator" />
+
+    <div class="basic-form small">
+
+        <div class="basic-form-row">
+            <span class="basic-btn medium">@Html.ActionLink("Back to List", "Index")</span>
+        </div>
+
+        <div class="basic-form-row">
+            <h3 class="del-warning">Warning! Deleting this will cause to all of it's related data to be deleted.</h3>
+            <h3 class="basic-form-title">Are you sure you want to delete this, and all related?</h3>
+
+            <div class="basic-form-main-p">
+                <p>Manufacturer: <span>@Model.ManufacturerName</span></p>
+            </div>
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <input type="submit" value="Delete All" class="attn-lvl-h" />
+            }
+        </div>
+
+        <p class="validation-summary-errors">@ViewBag.ErrorMessage</p>
+
+    </div>
+</div>

@@ -1,0 +1,57 @@
+﻿@model OhadsCarRental.Rental
+
+@{
+    ViewBag.Title = "Car Return Confirmation - Ohad's Car Rental";
+
+    // Sets the car model name title:
+    string carModelName = string.Format("{0} {1} {2} {3}",
+                                        Model.FleetCar.CarModel.ManufacturerModel.Manufacturer.ManufacturerName,
+                                        Model.FleetCar.CarModel.ManufacturerModel.ManufacturerModelName,
+                                        Model.FleetCar.CarModel.ProductionYear,
+                                        Model.FleetCar.CarModel.ManualGear ? "Manual" : "Automatic");
+}
+
+@section PageStyles {
+    @Styles.Render("~/Content/themes/Orders")
+}
+
+<div class="d-section">
+    <h1 class="d-title">Car Return Confirmation</h1>
+    <hr class="d-title-separator" />
+
+    <div class="basic-form conf-rtn">
+
+        <p class="validation-summary-errors">@ViewBag.ErrorMessage</p>
+
+        <div class="basic-form-row">
+            <span class="basic-btn medium">@Html.ActionLink("Back to List", "CarsToReturn")</span>
+        </div>
+
+        <div class="basic-form-row">
+            <h3 class="basic-form-title">Confirm return of this car:</h3>
+            <hr class="d-title-separator" />
+
+            <div class="basic-form-main-p">
+                <div class="img-wrapper">
+                    <img src="~/Content/images/@Model.FleetCar.CarImage" alt="@carModelName" />
+                </div>
+                <p>Receipt Number: <span>@Model.RentalID</span></p>
+                <p>License Plate: <span>@Model.LicensePlate</span></p>
+                <p>Customer: <span>@Model.User.FirstName  @Model.User.LastName</span></p>
+                <p>Car Model: <span>@carModelName</span></p>
+                <p>Pick Up Date: <span>@Model.PickUpDate.ToShortDateString()</span></p>
+                <p>Return Date: <span>@Model.ReturnDate.ToShortDateString()</span></p>
+            </div>
+
+            @using (Html.BeginForm())
+            {
+                @Html.HiddenFor(model => model.RentalID)
+
+                @Html.AntiForgeryToken()
+                <input type="submit" value="Confirm Return" class="attn-lvl-m conf-rtn" />
+            }
+        </div>
+
+    </div>
+</div>
+

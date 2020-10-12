@@ -1,0 +1,57 @@
+﻿@model IEnumerable<OhadsCarRental.Rental>
+
+@{
+    ViewBag.Title = "Cars to Return - Ohad's Car Rental";
+}
+
+@section PageStyles {
+    @Styles.Render("~/Content/themes/Orders")
+}
+
+<div class="d-section">
+    <h1 class="d-title">Cars to Return</h1>
+    <hr class="d-title-separator" />
+
+    <div class="basic-form big cars-to-rtn">
+
+        <p class="validation-summary-errors">@ViewBag.ErrorMessage</p>
+
+        <div class ="basic-form-row control-row">
+            <div class="basic-btn medium rld-all">
+                @Html.ActionLink("Reload All", "CarsToReturn", "Orders")
+            </div>
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true)
+
+                <fieldset id="carsToReturn">
+                    <legend>Return a car</legend>
+                    <label for="ReceiptNum">Receipt Number: </label>
+                    <input type="text" id="ReceiptNum" name="ReceiptNum" />
+                    <input type="submit" value="Search Receipt" />
+                </fieldset>
+            }
+        </div>
+
+        <div class="basic-form-row">
+            <div class="model-tbl">
+
+                <div class="model-tbl-th col-5">
+                    <span>Receipt Number</span>
+                    <span>Customer</span>
+                    <span>License Plate</span>
+                    <span>Car Model</span>
+                    <span>Rental Dates</span>
+                </div>
+
+                @foreach (var rental in Model)
+                {
+                    @Html.Partial("_CarToReturnPartial", rental)
+                }
+            </div>
+        </div>
+
+    </div>
+</div>
+

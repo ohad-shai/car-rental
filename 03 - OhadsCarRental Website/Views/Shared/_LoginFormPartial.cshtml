@@ -1,0 +1,38 @@
+﻿@model OhadsCarRental.LoginViewModel
+
+<div class="login-form">
+    <h4 class="login-header">Log in to your account</h4>
+
+    @using (Html.BeginForm("Login", "Account", new { returnUrl = ViewBag.ReturnUrl }, FormMethod.Post, htmlAttributes: new { @id = "loginForm" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+        <div class="login-row">
+            <label for="Username">Username</label>
+            @Html.ValidationMessageFor(model => model.Username)
+            @Html.EditorFor(model => model.Username)
+        </div>
+        <div class="login-row">
+            <label for="Password">Password</label>
+            @Html.ValidationMessageFor(model => model.Password)
+            @Html.PasswordFor(model => model.Password)
+
+            <div class="login-remember">
+                <label>
+                    <input type="checkbox" data-val="true" id="RememberMe" name="RememberMe" checked="checked" value="true">
+                    Keep me logged in
+                </label>
+            </div>
+
+            <a id="forgotPsw" href="~/Account/ForgottenPassword">Forgotten your password?</a>
+        </div>
+        <div>
+            <input type="submit" class="sign-in-btn" id="sendLogin" value="Log in">
+            <span class="create-account"> or&nbsp;<a href="~/Account/Register">Create an account</a></span>
+        </div>
+    }
+
+    <p id="loginStatus" class="validation-summary-errors">@ViewBag.ErrorMessage</p>
+</div>
+

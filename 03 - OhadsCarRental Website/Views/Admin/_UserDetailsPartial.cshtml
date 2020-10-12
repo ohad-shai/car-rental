@@ -1,0 +1,34 @@
+﻿@model OhadsCarRental.User
+
+<div class="model-tbl-tr col-3">
+    <input type="hidden" value="@Model.UserID" />
+    <span>@Model.Username</span>
+    <span>@Model.Roles.FirstOrDefault().RoleName</span>
+    <span class="basic-btn">
+        @Html.ActionLink("Edit Role", "EditUserRole", new { id = Model.UserID }, new { @class = "edit-fg" })
+        @Html.ActionLink("Delete", "DeleteUser", new { id = Model.UserID }, new { @class = "delete-fg" })
+    </span>
+</div>
+
+@* Full user details (after opened row) *@
+<div class="model-details-block">
+    <p>Username: <span>@Model.Username</span></p>
+    <p>First Name: <span>@Model.FirstName</span></p>
+    <p>Last Name: <span>@Model.LastName</span></p>
+    <p>Identity Number: <span>@Model.IdentityNumber</span></p>
+    <p>Email: <span>@Html.DisplayFor(u => u.Email)</span></p>
+    <p>Date of Birth: 
+    @if (Model.BirthDate.HasValue)
+    {
+        <span>@Model.BirthDate.Value.ToShortDateString()</span>
+    }
+    </p>
+    <p>Role: <span>@Model.Roles.FirstOrDefault().RoleName</span></p>
+    <p>
+        <span class="basic-btn">
+            @Html.ActionLink("Edit Role", "EditUserRole", new { id = Model.UserID }, new { @class = "edit-fg" })
+            @Html.ActionLink("Delete", "DeleteUser", new { id = Model.UserID }, new { @class = "delete-fg" })
+        </span>
+    </p>
+</div>
+

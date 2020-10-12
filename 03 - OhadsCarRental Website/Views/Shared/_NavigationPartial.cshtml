@@ -1,0 +1,69 @@
+﻿@if (Request.IsAuthenticated)
+{
+    if (Roles.IsUserInRole("User")) // Navigation for ==> Users
+    {
+        // For all registered users:
+        @Html.ActionLink("Order a car", "Watch", "FleetCars")
+        @Html.ActionLink("Orders History", "History", "Orders")
+    }
+    else if (Roles.IsUserInRole("Employee")) // Navigation for ==> Employees
+    {
+        // Only for Employees:
+        @Html.ActionLink("Return a car", "CarsToReturn", "Orders")
+        <hr class="separator" />
+        // For all registered users:
+        @Html.ActionLink("Order a car", "Watch", "FleetCars")
+        @Html.ActionLink("Orders History", "History", "Orders")
+    }
+    else if (Roles.IsUserInRole("Manager")) // Navigation for ==> Managers
+    {
+        // Only for Managers:
+        @Html.ActionLink("Car Models", "Index", "CarModels")
+        @Html.ActionLink("Fleet Cars", "Index", "FleetCars")
+        @Html.ActionLink("Orders", "Watch", "Orders")
+        @Html.ActionLink("Contacts", "Watch", "Contacts")
+        <hr class="separator" />
+        // For all registered users:
+        @Html.ActionLink("Order a car", "Watch", "FleetCars")
+        @Html.ActionLink("Orders History", "History", "Orders")
+    }
+    else if (Roles.IsUserInRole("Admin")) // Navigation for ==> Admins
+    {
+        // Only for Admins:
+        @Html.ActionLink("Admin Management", "Index", "Admin")
+        <hr class="separator" />
+        // From Managers:
+        @Html.ActionLink("Car Models", "Index", "CarModels")
+        @Html.ActionLink("Fleet Cars", "Index", "FleetCars")
+        @Html.ActionLink("Orders", "Watch", "Orders")
+        @Html.ActionLink("Contacts", "Watch", "Contacts")
+        <hr class="separator" />
+        // All from other roles:
+        @Html.ActionLink("Order a car", "Watch", "FleetCars")
+        @Html.ActionLink("Orders History", "History", "Orders")
+        @Html.ActionLink("Return a car", "CarsToReturn", "Orders")
+    }
+    <hr class="separator" />
+    @Html.ActionLink("Home", "Index", "Home")
+    @Html.ActionLink("About", "About", "Home")
+    @Html.ActionLink("Cars", "Index", "Cars")
+    @Html.ActionLink("Terms", "Terms", "Home")
+    @Html.ActionLink("Contact Us", "Create", "Contacts")
+    <hr class="separator" />
+    <a href="~/Account/UserProfile">
+        <div class="icon icon-sign-in"></div>
+        @User.Identity.Name
+    </a>
+    @Html.ActionLink("Log out", "Logout", "Account")
+}
+else
+{
+    @Html.ActionLink("Home", "Index", "Home")
+    @Html.ActionLink("About", "About", "Home")
+    @Html.ActionLink("Cars", "Watch", "FleetCars")
+    @Html.ActionLink("Terms", "Terms", "Home")
+    @Html.ActionLink("Contact Us", "Create", "Contacts")
+    <hr class="separator" />
+    @Html.ActionLink("Log in", "Login", "Account")
+    @Html.ActionLink("Register", "Register", "Account")
+}

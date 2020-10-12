@@ -1,0 +1,86 @@
+﻿@using OhadsCarRental
+
+@model SearchViewModel
+
+@{
+    ViewBag.Title = "Search for Cars - Ohad's Car Rental";
+}
+
+@section PageStyles {
+    @Styles.Render("~/Content/themes/FleetCars")
+}
+
+<div class="d-section" id="searchSection">
+    <h1 class="d-title">Search for Cars</h1>
+    <hr class="d-title-separator" />
+
+    <p class="validation-summary-errors">@ViewBag.ErrorMessage</p>
+
+    <div class="basic-form big basic-control-bar search no-select">
+
+        <form id="searchForm" method="get" action="#">
+            <div class="basic-field">
+                <label for="SelectedManufacturer">Manufacturer: </label>
+                @Html.DropDownListFor(m => m.DDLs.SelectedManufacturer, new SelectList(Model.DDLs.Manufacturers, "Value", "Text"), "All")
+            </div>
+            <div class="basic-field">
+                <label for="SelectedManufacturerModel">Model: </label>
+                @Html.DropDownListFor(m => m.DDLs.SelectedManufacturerModel, new SelectList(Model.DDLs.ManufacturerModels, "Value", "Text"), "All")
+            </div>
+            <div class="basic-field">
+                <label for="SelectedYear">Year: </label>
+                @Html.DropDownListFor(m => m.DDLs.SelectedYear, new SelectList(Model.DDLs.Years, "Value", "Text"), "All")
+            </div>
+            <div class="basic-field">
+                <label for="SelectedGear">Gear: </label>
+                @Html.DropDownListFor(m => m.DDLs.SelectedGear, new SelectList(Model.DDLs.Gear, "Value", "Text"), "All")
+            </div>
+            <div class="basic-field">
+                @Html.LabelFor(model => model.FreeText, "Text:")
+                @Html.TextBoxFor(model => model.FreeText)
+            </div>
+            <div class="basic-field">
+                <input type="button" id="moreSearch" class="control-btn" value="More" />
+                <input type="reset" class="control-btn" value="Reset" />
+            </div>
+            <div class="basic-field">
+                <input type="submit" id="searchCars" class="control-btn" value="Search" />
+            </div>
+
+            <div class="search-more-content">
+                <hr />
+                <div class="basic-field">
+                    @Html.LabelFor(model => model.StartDate, "Start Date:")
+                    @Html.EditorFor(model => model.StartDate)
+                </div>
+                <div class="basic-field">
+                    @Html.LabelFor(model => model.ReturnDate, "Return Date:")
+                    @Html.EditorFor(model => model.ReturnDate)
+                </div>
+                <div class="basic-field">
+                    <input type="button" id="searchHistory" value="History of Search" />
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+</div>
+
+@* Holds the validation messages in a hidden block.
+    If there's an error, it will be displayed in a popup message. *@
+<div id="validation-hidden">
+    @Html.ValidationMessageFor(model => model.DDLs.SelectedManufacturer)
+    @Html.ValidationMessageFor(model => model.DDLs.SelectedManufacturerModel)
+    @Html.ValidationMessageFor(model => model.DDLs.SelectedYear)
+    @Html.ValidationMessageFor(model => model.DDLs.SelectedGear)
+    @Html.ValidationMessageFor(model => model.FreeText)
+    @Html.ValidationMessageFor(model => model.StartDate)
+    @Html.ValidationMessageFor(model => model.ReturnDate)
+</div>
+
+@section scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/DropDownLists")
+    @Scripts.Render("~/bundles/CarsSearcher")
+}

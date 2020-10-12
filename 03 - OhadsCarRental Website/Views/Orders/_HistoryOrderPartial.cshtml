@@ -1,0 +1,46 @@
+﻿@model OhadsCarRental.Rental
+
+@{
+    // Sets the car model name title:
+    string carModelName = string.Format("{0} {1} {2} {3}",
+                                        Model.FleetCar.CarModel.ManufacturerModel.Manufacturer.ManufacturerName,
+                                        Model.FleetCar.CarModel.ManufacturerModel.ManufacturerModelName,
+                                        Model.FleetCar.CarModel.ProductionYear,
+                                        Model.FleetCar.CarModel.ManualGear ? "Manual" : "Automatic");
+}
+
+<div class="model-tbl-tr col-5">
+    <span>@Model.RentalID</span>
+    <span>@carModelName</span>
+    <span>@Model.PickUpDate.ToShortDateString()</span>
+    <span>@Model.ReturnDate.ToShortDateString()</span>
+    @if (Model.ActualReturnDate.HasValue)
+    {
+        <span>@Model.ActualReturnDate.Value.ToShortDateString()</span>
+    }
+    else
+    {
+        <span>-</span>
+    }
+    
+</div>
+
+@* Full order details (after opened row) *@
+<div class="model-details-block">
+    <img src="~/Content/images/@Model.FleetCar.CarImage" alt="@carModelName" />
+    <p>Receipt Number: <span>@Model.RentalID</span></p>
+    <p>Car Model: <span>@carModelName</span></p>
+    <p>Daily Price: <span>@string.Format("{0:c}", Model.FleetCar.CarModel.DailyPrice)</span></p>
+    <p>Day Delay Price: <span>@string.Format("{0:c}", Model.FleetCar.CarModel.DayDelayPrice)</span></p>
+
+    <p>Pick Up Date: <span>@Model.PickUpDate.ToShortDateString()</span></p>
+    <p>Return Date: <span>@Model.ReturnDate.ToShortDateString()</span></p>
+    @if (Model.ActualReturnDate.HasValue)
+    {
+        <p>Actual Return Date: <span>@Model.ActualReturnDate.Value.ToShortDateString()</span></p>
+    }
+    else
+    {
+        <p>Actual Return Date: <span>-</span></p>
+    }
+</div>

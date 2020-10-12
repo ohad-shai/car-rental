@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "404 - Page Not Found";
+}
+
+@section PageStyles {
+    @Styles.Render("~/Content/themes/Error")
+}
+
+<div class="error-wrapper" data-ix="fade-in-heading">
+    <div class="icon error-icon icon-confused" data-ix="flip"></div>
+    
+    <h1 class="error-title" data-ix="fade-in-heading">Oops. <span class="error-name">Page was not found.</span> Sorry about that.</h1>
+    <hr class="title-separator" data-ix="hard-scale-on-scroll-delay-500" />
+    
+    <h2 data-ix="fade-in-heading-4000">But, it's not end of the world...</h2>
+    <hr class="sub-separator" data-ix="fade-in-heading-4200" />
+    
+    <h2 data-ix="fade-in-heading-5000">Listen to this awesome song :)</h2>
+    <hr class="sub-separator second" data-ix="fade-in-heading-5200" />
+
+    <div class="video-wrapper rick-astley" data-ix="width-adjust">
+        <iframe width="640" height="480" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+</div>
+
+@section scripts {
+    @Scripts.Render("~/bundles/webflow")
+}
+
+

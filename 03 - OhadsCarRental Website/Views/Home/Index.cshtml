@@ -1,0 +1,196 @@
+﻿@{
+    ViewBag.Title = "Home - Ohad's Car Rental";
+}
+
+@section PageStyles {
+    @Styles.Render("~/Content/themes/Home")
+}
+
+<div id="home-header">
+    <div id="home-header-content">
+        <img id="home-header-logo" data-ix="fade-in-heading" src="~/Content/images/site/OhadsCarRentalLogo.png" alt="Ohad's Car Rental Logo" />
+        <div id="home-header-text">
+            <h1 data-ix="fade-in-heading-2">The best place to rent a car.</h1>
+            <p data-ix="fade-in-heading-3">Rent now.</p>
+        </div>
+    </div>
+</div>
+
+<div class="section about" data-ix="about-load">
+
+    <div class="container" id="login-form">
+        <div class="about-content">
+
+            <div class="left" data-ix="width-adjust">
+
+                <form method="get" action="~/Search" id="CarsSearchForm" name="CarsSearchForm">
+                    <h2>Search for rentals</h2>
+                    <fieldset id="rental-search">
+                        <legend>Search for rentals</legend>
+
+                        <div>
+                            <label for="sStartDate">Start Date</label>
+                            <input type="date" id="sStartDate" name="StartDate" />
+                        </div>
+                        <div>
+                            <label for="sReturnDate">Return Date</label>
+                            <input type="date" id="sReturnDate" name="ReturnDate" />
+                        </div>
+                        <div>
+                            <label for="sManufacturer">Free Text</label>
+                            <input type="text" id="sFreeText" name="FreeText" />
+                        </div>
+
+                        <div class="additional-info">
+                            <p>* More search filters at Advanced Search.</p>
+                        </div>
+
+                    </fieldset>
+
+                    <div class="send-container">
+                        <a href="~/Search">Advanced Search</a>
+                        <input type="submit" id="btnSearch" value="Search">
+                    </div>
+
+                </form>
+            </div>
+
+            <div class="right">
+                <h1>Ohad's Car Rental</h1>
+                <hr class="separator" />
+                <p>The most popular car rentals company around LA, with a large fleet of vehicles, which includes many Cars, SUVs, Vans, Trucks, and Exotic Cars. Orders are carried out quickly and easily, with a full customer support 24/7.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="companies-logos-wrapper">
+        <ul class="subFooterLogosList">
+            <li><img src="~/Content/images/site/Toyota_Logo.png" alt="Toyota"></li>
+            <li><img src="~/Content/images/site/Mazda_Logo.png" alt="Mazda"></li>
+            <li><img src="~/Content/images/site/Kia_Logo.png" alt="Kia"></li>
+            <li><img src="~/Content/images/site/Nissan_Logo.png" alt="Nissan"></li>
+            <li><img src="~/Content/images/site/Ford_Logo.png" alt="Ford"></li>
+            <li><img src="~/Content/images/site/Honda_Logo.png" alt="Honda"></li>
+        </ul>
+    </div>
+
+</div>
+
+<div class="section more-about" data-ix="drop-from-top">
+    <div class="v-ordered-about">
+
+        <div class="v-block" data-ix="grow-up-1">
+            <div class="icon v-block-icons icon-phone"></div>
+            <p>See our opening times <a href="~/About">here</a></p>
+            <p class="call-phone">Call us: 05 465 78 54</p>
+        </div>
+
+        <div class="v-block" data-ix="grow-up-2">
+            <div class="icon v-block-icons icon-message"></div>
+            <p>Give us some feedback.</p>
+            <a href="~/ContactUs">Contact Us</a>
+        </div>
+
+        <div class="v-block" data-ix="grow-up-3">
+            <div class="icon v-block-icons icon-loacation"></div>
+            <p class="comp-location">2501 N Hollywood Way, CA 90301, United States</p>
+        </div>
+
+    </div>
+</div>
+
+<div class="section home-companies" data-ix="scale-on-scroll">
+    <h1 class="block-title" data-ix="scale-on-scroll-delay-200">Home Companies</h1>
+    <hr class="block-title-separator" data-ix="hard-scale-on-scroll-delay-500" />
+    <div class="accordion" data-ix="scale-on-scroll-delay-100">
+        <ul>
+            <li>
+                <div>
+                    <a href="#">
+                        <h2>Toyota</h2>
+                        <p>Toyota Motor Corporation, a Japanese automotive manufacturer.</p>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <a href="#">
+                        <h2>Mazda</h2>
+                        <p>Mazda Motor Corporation, a Japanese automaker.</p>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <a href="#">
+                        <h2>Kia</h2>
+                        <p>Kia Motors Corporation, South Korea's second-largest automobile manufacturer.</p>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <a href="#">
+                        <h2>Nissan</h2>
+                        <p>Nissan Motor Company Ltd, a Japanese multinational automobile manufacturer.</p>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <a href="#">
+                        <h2>Ford</h2>
+                        <p>Ford Motor Company, an American multinational automaker.</p>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <a href="#">
+                        <h2>Honda</h2>
+                        <p>Honda Motor Ltd, a Japanese public multinational corporation.</p>
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="section proj-info" data-scroll="mid" data-ix="scale-on-scroll">
+    <div class="w-container">
+        <h1 class="block-title" data-ix="scale-on-scroll-delay-200">Project Information</h1>
+        <hr class="block-title-separator" data-ix="hard-scale-on-scroll-delay-500" />
+        <div class="w-row">
+            <div class="w-col w-col-3 proj-info-box green" data-ix="scale-on-scroll-delay-800">
+                <div class="icon proj-info-icons icon-webApp"></div>
+                <h3>Browser Compatibility</h3>
+                <hr />
+                <p>This project works properly on most of the popular browsers today, including: Chrome, FireFox, Opera, and even IE-11, IE-10, and IE-9.</p>
+            </div>
+            <div class="w-col w-col-3 proj-info-box purple" data-ix="scale-on-scroll-delay-1000">
+                <div class="icon proj-info-icons icon-wDesign"></div>
+                <h3>Use of Libraries</h3>
+                <hr />
+                <p>I used in this project with jQuery library, and also webflow library for making those fading animations.</p>
+            </div>
+            <div class="w-col w-col-3 proj-info-box blue" data-ix="scale-on-scroll-delay-1200">
+                <div class="icon proj-info-icons icon-gDesign"></div>
+                <h3>Graphic Design &amp; UI</h3>
+                <hr />
+                <p>I made the website full responsive, works on all devices nicely, I created the logo with Photoshop, I used font icons as possible.</p>
+            </div>
+            <div class="w-col w-col-3 proj-info-box red" data-ix="scale-on-scroll-delay-1400">
+                <div class="icon proj-info-icons icon-vidnAud"></div>
+                <h3>Other</h3>
+                <hr />
+                <p>I enjoyed making this last project for John Bryce college. Thank you for all the information I learned, and wish you all the best.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    @Scripts.Render("~/bundles/webflow")
+    @Scripts.Render("~/bundles/Home")
+}

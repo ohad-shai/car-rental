@@ -1,0 +1,29 @@
+﻿@model OhadsCarRental.Contact
+
+@if (Model.IsRead)
+{
+    <div class="model-tbl-tr col-3 contacts">
+        <span>@Model.FirstName&nbsp;@Model.LastName</span>
+        <span>@Model.Text</span>
+        <span>@Model.DateTime</span>
+    </div>
+}
+else
+{
+    <div class="model-tbl-tr col-3 contacts unread">
+        <input type="hidden" value="@Model.ContactID" />
+        <span>@Model.FirstName&nbsp;@Model.LastName</span>
+        <span>@Model.Text</span>
+        <span>@Model.DateTime</span>
+    </div>
+}
+
+@* Full contact details (after opened row) *@
+<div class="model-details-block">
+    <p>From: <span>@Model.FirstName&nbsp;@Model.LastName</span></p>
+    <p>Email: <span>@Html.DisplayFor(m => m.Email)</span></p>
+    <p>Phone: <span>@Model.Phone</span></p>
+    <p>Text: <span>@Model.Text</span></p>
+    <p>Date: <span>@Model.DateTime</span></p>
+</div>
+

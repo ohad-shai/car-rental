@@ -1,0 +1,24 @@
+﻿@model OhadsCarRental.Manufacturer
+
+<div class="model-tbl-tr col-3">
+    <input type="hidden" value="@Model.ManufacturerID" />
+    <span>@Model.ManufacturerID</span>
+    <span>@Model.ManufacturerName</span>
+    <span class="basic-btn rud-btns-fg">
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ManufacturerID })
+        @Html.ActionLink("Details", "Details", new { id = Model.ManufacturerID })
+        @Html.ActionLink("Delete", "Delete", new { id = Model.ManufacturerID })
+    </span>
+</div>
+
+@* Full manufacturer details (after opened row) *@
+<div class="model-details-block">
+    <p>Manufacturer: <span>@Model.ManufacturerName</span></p>
+    <p>
+        <span class="basic-btn rud-btns-fg">
+            @Html.ActionLink("Edit", "Edit", new { id = Model.ManufacturerID })
+            @Html.ActionLink("Details", "Details", new { id = Model.ManufacturerID })
+            @Html.ActionLink("Delete", "Delete", new { id = Model.ManufacturerID })
+        </span>
+    </p>
+</div>

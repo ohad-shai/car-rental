@@ -1,0 +1,66 @@
+﻿@model OhadsCarRental.CarModelViewModel
+
+@{
+    ViewBag.Title = "Add a new Car Model - Ohad's Car Rental";
+}
+
+<div class="d-section">
+    <h1 class="d-title">Add a new Car Model</h1>
+    <hr class="d-title-separator" />
+
+    <div class="basic-form small">
+
+        <div class="basic-form-row">
+            <span class="basic-btn medium">@Html.ActionLink("Back to List", "Index")</span>
+        </div>
+
+        <div class="basic-form-row">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true)
+
+                <fieldset>
+                    <legend>Car Model</legend>
+
+                    @Html.LabelFor(model => model.DDLs.SelectedManufacturer, "Manufacturer")
+                    @Html.ValidationMessageFor(model => model.DDLs.SelectedManufacturer)
+                    @Html.DropDownListFor(m => m.DDLs.SelectedManufacturer, new SelectList(Model.DDLs.Manufacturers, "Value", "Text"), "-- Select --")
+
+                    @Html.HiddenFor(model => model.CarModel.ManufacturerModelID)
+                    @Html.LabelFor(model => model.DDLs.SelectedManufacturerModel, "Model")
+                    @Html.ValidationMessageFor(model => model.DDLs.SelectedManufacturerModel)
+                    @Html.DropDownListFor(m => m.DDLs.SelectedManufacturerModel, new SelectList(Model.DDLs.ManufacturerModels, "Value", "Text"), "-- Select --")
+
+                    @Html.LabelFor(model => model.CarModel.ProductionYear, "Production Year")
+                    @Html.ValidationMessageFor(model => model.CarModel.ProductionYear)
+                    @Html.EditorFor(model => model.CarModel.ProductionYear)
+
+                    @Html.HiddenFor(model => model.CarModel.ManualGear)
+                    @Html.LabelFor(model => model.GearDDL.SelectedGear, "Gear")
+                    @Html.ValidationMessageFor(model => model.GearDDL.SelectedGear)
+                    @Html.DropDownListFor(m => m.GearDDL.SelectedGear, new SelectList(Model.GearDDL.Gear, "Value", "Text"), "-- Select --")
+
+                    @Html.LabelFor(model => model.CarModel.DailyPrice, "Daily Price")
+                    @Html.ValidationMessageFor(model => model.CarModel.DailyPrice)
+                    @Html.EditorFor(model => model.CarModel.DailyPrice)
+
+                    @Html.LabelFor(model => model.CarModel.DayDelayPrice, "Day Delay Price")
+                    @Html.ValidationMessageFor(model => model.CarModel.DayDelayPrice)
+                    @Html.EditorFor(model => model.CarModel.DayDelayPrice)
+
+                    <input type="submit" value="Add" />
+                </fieldset>
+            }
+        </div>
+
+        <p class="validation-summary-errors">@ViewBag.ErrorMessage</p>
+
+    </div>
+</div>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/DropDownLists")
+}

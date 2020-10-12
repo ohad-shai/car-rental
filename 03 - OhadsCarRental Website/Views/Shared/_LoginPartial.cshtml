@@ -1,0 +1,8 @@
+﻿@if (Request.IsAuthenticated)
+{
+    <span>@User.Identity.Name</span>
+}
+else
+{
+    <span>Log in</span>
+}

@@ -1,0 +1,39 @@
+﻿@model OhadsCarRental.User
+
+@{
+    ViewBag.Title = Model.Username + "'s Profile - Ohad's Car Rental";
+}
+
+@section PageStyles {
+    @Styles.Render("~/Content/themes/Account")
+}
+
+<div class="d-section">
+    <h1 class="d-title">My Profile</h1>
+    <hr class="d-title-separator" />
+
+    <div class="basic-form small user-profile">
+
+        <p class="validation-summary-errors">@ViewBag.ErrorMessage</p>
+
+        <div class="basic-form-row">
+            <div class="basic-form-main-p">
+                <p>Username: <span>@Model.Username</span></p>
+                <p>Role: <span>@Model.Roles.FirstOrDefault().RoleName</span></p>
+                <p>First Name: <span>@Model.FirstName</span></p>
+                <p>Last Name: <span>@Model.LastName</span></p>
+                <p>Identity Number: <span>@Model.IdentityNumber</span></p>
+                <p>Email: <span>@Model.Email</span></p>
+                @if (Model.BirthDate.HasValue)
+                {
+                    <p>Date of Birth: <span>@Model.BirthDate.Value.ToShortDateString()</span></p>
+                }
+                else
+                {
+                    <p>Date of Birth: <span></span></p>
+                }
+            </div>
+        </div>
+
+    </div>
+</div>

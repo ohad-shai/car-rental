@@ -1,0 +1,42 @@
+﻿@model OhadsCarRental.User
+
+@{
+    ViewBag.Title = "Delete a User - Ohad's Car Rental";
+}
+
+<div class="d-section">
+    <h1 class="d-title">Delete a User</h1>
+    <hr class="d-title-separator" />
+
+    <div class="basic-form small">
+
+        <div class="basic-form-row">
+            <span class="basic-btn medium">@Html.ActionLink("Back to List", "AllUsers")</span>
+        </div>
+
+        <div class="basic-form-row">
+            <h3 class="del-warning">Warning! Deleting this user will cause to all of it's related data to be deleted.</h3>
+            <h3 class="basic-form-title">Are you sure you want to delete this?</h3>
+
+            <div class="basic-form-main-p">
+                <p>Username: <span>@Model.Username</span></p>
+                <p>Full Name: <span>@Model.FirstName @Model.LastName</span></p>
+                <p>Identity Number: <span>@Model.IdentityNumber</span></p>
+            </div>
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <input type="submit" value="Delete" class="attn-lvl-h" />
+            }
+        </div>
+
+        <p class="validation-summary-errors">@ViewBag.ErrorMessage</p>
+
+    </div>
+</div>
+
+
+
+
+
