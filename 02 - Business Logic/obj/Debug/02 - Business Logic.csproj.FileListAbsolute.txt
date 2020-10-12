@@ -1,0 +1,18 @@
+C:\Users\Ohad\Desktop\OhadsCarRental - Change body\02 - Business Logic\bin\Debug\02 - Business Logic.dll
+C:\Users\Ohad\Desktop\OhadsCarRental - Change body\02 - Business Logic\bin\Debug\02 - Business Logic.pdb
+C:\Users\Ohad\Desktop\OhadsCarRental - Change body\02 - Business Logic\bin\Debug\01 - Data Access.dll
+C:\Users\Ohad\Desktop\OhadsCarRental - Change body\02 - Business Logic\bin\Debug\EntityFramework.dll
+C:\Users\Ohad\Desktop\OhadsCarRental - Change body\02 - Business Logic\bin\Debug\01 - Data Access.pdb
+C:\Users\Ohad\Desktop\OhadsCarRental - Change body\02 - Business Logic\bin\Debug\EntityFramework.xml
+C:\Users\Ohad\Desktop\OhadsCarRental - Change body\02 - Business Logic\obj\Debug\02 - Business Logic.csprojResolveAssemblyReference.cache
+C:\Users\Ohad\Desktop\OhadsCarRental - Change body\02 - Business Logic\obj\Debug\02 - Business Logic.dll
+C:\Users\Ohad\Desktop\OhadsCarRental - Change body\02 - Business Logic\obj\Debug\02 - Business Logic.pdb
+C:\Users\Ohad\Desktop\OhadsCarRental\02 - Business Logic\bin\Debug\02 - Business Logic.dll
+C:\Users\Ohad\Desktop\OhadsCarRental\02 - Business Logic\bin\Debug\02 - Business Logic.pdb
+C:\Users\Ohad\Desktop\OhadsCarRental\02 - Business Logic\bin\Debug\01 - Data Access.dll
+C:\Users\Ohad\Desktop\OhadsCarRental\02 - Business Logic\bin\Debug\EntityFramework.dll
+C:\Users\Ohad\Desktop\OhadsCarRental\02 - Business Logic\bin\Debug\01 - Data Access.pdb
+C:\Users\Ohad\Desktop\OhadsCarRental\02 - Business Logic\bin\Debug\EntityFramework.xml
+C:\Users\Ohad\Desktop\OhadsCarRental\02 - Business Logic\obj\Debug\02 - Business Logic.csprojResolveAssemblyReference.cache
+C:\Users\Ohad\Desktop\OhadsCarRental\02 - Business Logic\obj\Debug\02 - Business Logic.dll
+C:\Users\Ohad\Desktop\OhadsCarRental\02 - Business Logic\obj\Debug\02 - Business Logic.pdb
