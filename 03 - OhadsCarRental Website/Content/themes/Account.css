@@ -1,0 +1,237 @@
+﻿/*--------------------------------------------
+    CSS Chapters:
+    -------------
+    0 - General formatting
+    1 - Font icons
+    2 - Pages:
+        2.1 - Register Page
+        2.2 - Login Page
+        2.3 - User Profile Page
+    3 - Media Queries
+--------------------------------------------*/
+
+/*#region 0 - General formatting */
+
+div.section {
+    opacity: 0;
+    width: 100%;
+    min-height: inherit;
+    float: left;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #fff;
+    color: #616161;
+    border-top: 1px solid #ccc;
+    box-shadow: inset 0px -1px 12px rgba(0,0,0,0.2), 0px 1.5px 2px rgba(0,0,0,0.5);
+    -webkit-box-shadow: inset 0px -1px 12px rgba(0,0,0,0.2), 0px 1.5px 2px rgba(0,0,0,0.5);
+    -moz-box-shadow: inset 0px -1px 12px rgba(0,0,0,0.2), 0px 1.5px 2px rgba(0,0,0,0.5);
+}
+
+h1.block-title {
+    letter-spacing: 5px;
+    font-weight: 100;
+    font-family: 'Impact';
+    text-transform: uppercase;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: -4px;
+}
+
+hr.block-title-separator {
+    width: 80%;
+    max-width: 936px;
+    box-shadow: 15px 4px 0px #a0a0a0;
+    margin-bottom: 20px;
+}
+
+form label {
+    display: block;
+    width: 25%;
+    float: left;
+    font-size: 0.875em;
+    color: #000;
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+form h2 {
+    font-size: 2em;
+    font-weight: 700;
+    line-height: 1.3em;
+    color: #000;
+    text-shadow: 1px 1px 0 rgba(255,255,255,0.5);
+    padding: 0 0 15px;
+}
+
+/*#endregion */
+
+/*#region 1 - Font icons */
+
+.reg-info-icons {
+    font-size: 35px !important;
+    padding-right: 5px;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.8);
+    cursor: default;
+}
+
+    .reg-info-icons::before {
+        font-size: 35px !important;
+    }
+
+.icon-barcode::before {
+    content: "\e903";
+}
+
+.icon-eye::before {
+    content: "\e915";
+}
+
+.reg-info-icons.icon-search {
+    color: #78be77;
+}
+
+.reg-info-icons.icon-barcode {
+    color: #b94545;
+}
+
+.reg-info-icons.icon-eye {
+    color: #a357c6;
+}
+
+/*#endregion */
+
+/*#region 2 - Pages */
+
+/*#region 2.1 - Register Page */
+
+div.register-wrapper {
+    height: 100%;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 4%;
+    margin: 50px auto;
+}
+
+div.section.register {
+    min-height: 600px;
+    background-color: #29315f;
+    color: #fff;
+    padding-bottom: 50px;
+}
+
+    div.section.register label {
+        color: #fff;
+        text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+    }
+
+div.register-wrapper > div {
+    float: left;
+    margin: 0;
+}
+
+div#register-information {
+    width: 60%;
+    background-color: rgba(255, 255, 255, 0.0);
+    border: none;
+    border-right: none;
+    text-shadow: 2px 2px 2px #000;
+}
+
+div#register-block {
+    width: 40%;
+}
+
+div.reg-info-row {
+    float: left;
+    width: 100%;
+    line-height: 12px;
+    margin-bottom: 35px;
+}
+
+    div.reg-info-row:first-of-type {
+        margin-top: 20px;
+    }
+
+    div.reg-info-row * {
+        float: left;
+        padding-left: 12px;
+    }
+
+    div.reg-info-row h2 {
+        font-size: 20px;
+    }
+
+    div.reg-info-row p {
+        font-size: 15px;
+        margin-top: 2px;
+    }
+
+/*#endregion */
+
+/*#region 2.2 - Login Page  */
+
+div.section.login {
+    background: rgb(235,233,249);
+    background: -moz-linear-gradient(45deg, rgba(235,233,249,1) 0%, rgba(216,208,239,1) 50%, rgba(206,199,236,1) 51%, rgba(193,191,234,1) 100%);
+    background: -webkit-linear-gradient(45deg, rgba(235,233,249,1) 0%,rgba(216,208,239,1) 50%,rgba(206,199,236,1) 51%,rgba(193,191,234,1) 100%);
+    background: linear-gradient(45deg, rgba(235,233,249,1) 0%,rgba(216,208,239,1) 50%,rgba(206,199,236,1) 51%,rgba(193,191,234,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebe9f9', endColorstr='#c1bfea',GradientType=1 );
+    color: #fff;
+    padding-bottom: 50px;
+}
+
+    div.section.login label {
+        color: #fff;
+        text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+    }
+
+    div.section.login .sign-in-btn {
+        width: 100% !important;
+    }
+
+div#login-block {
+    max-width: 400px;
+}
+
+    div#login-block input#RememberMe {
+        width: auto;
+    }
+
+/*#endregion */
+
+/*#region 2.3 - User Profile Page */
+
+div.user-profile div.basic-form-main-p p {
+    width: 100%;
+}
+
+/*#endregion */
+
+/*#endregion */
+
+/*#region 3 - Media Queries */
+
+@media screen and (max-width:991px) {
+}
+
+@media screen and (max-width:767px) {
+
+    div.register-wrapper > div {
+        width: 100% !important;
+        max-width: none !important;
+    }
+
+    div#login-block {
+        width: 90%;
+    }
+
+        div#login-block div.login-form {
+            width: 100% !important;
+            padding: 0 !important;
+        }
+}
+
+@media screen and (max-width:479px) {
+}
+
+/*#endregion */
+

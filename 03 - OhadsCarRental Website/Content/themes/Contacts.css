@@ -1,0 +1,162 @@
+﻿/*--------------------------------------------
+    CSS Chapters:
+    -------------
+    0 - General formatting
+    1 - Font icons
+    2 - Pages:
+        2.1 - Create Page
+        2.2 - Watch Page
+    3 - Media Queries
+--------------------------------------------*/
+
+/*#region 0 - General formatting */
+
+div.section {
+    opacity: 0;
+    width: 100%;
+    min-height: inherit;
+    float: left;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #fff;
+    color: #616161;
+    border-top: 1px solid #ccc;
+    box-shadow: inset 0px -1px 12px rgba(0,0,0,0.2), 0px 1.5px 2px rgba(0,0,0,0.5);
+    -webkit-box-shadow: inset 0px -1px 12px rgba(0,0,0,0.2), 0px 1.5px 2px rgba(0,0,0,0.5);
+    -moz-box-shadow: inset 0px -1px 12px rgba(0,0,0,0.2), 0px 1.5px 2px rgba(0,0,0,0.5);
+}
+
+h1.block-title {
+    letter-spacing: 5px;
+    font-weight: 100;
+    font-family: 'Impact';
+    text-transform: uppercase;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: -4px;
+}
+
+hr.block-title-separator {
+    width: 80%;
+    max-width: 936px;
+    box-shadow: 15px 4px 0px #a0a0a0;
+    margin-bottom: 20px;
+}
+
+form label {
+    display: block;
+    width: 25%;
+    float: left;
+    font-size: 0.875em;
+    color: #000;
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+form h2 {
+    font-size: 2em;
+    font-weight: 700;
+    line-height: 1.3em;
+    color: #000;
+    text-shadow: 1px 1px 0 rgba(255,255,255,0.5);
+    padding: 0 0 15px;
+}
+
+/*#endregion */
+
+/*#region 1 - Font icons */
+
+.proj-info-icons {
+    font-size: 100px;
+    padding-bottom: 25px;
+    margin-top: 30px;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.8);
+    cursor: default;
+}
+
+.icon-webApp::before {
+    content: "\e92a";
+}
+
+.icon-wDesign::before {
+    content: "\e929";
+}
+
+.icon-gDesign::before {
+    content: "\e901";
+}
+
+.icon-vidnAud::before {
+    content: "\e917";
+}
+
+div.v-block div.v-block-icons:before {
+    font-size: 40px;
+    margin: 10% 0;
+    text-shadow: 1px 1px rgba(0,0,0,0.8);
+    cursor: default;
+}
+
+.icon-message::before {
+    content: "\e905";
+}
+
+.icon-loacation::before {
+    content: "\e906";
+}
+
+/*#endregion */
+
+/*#region 2 - Pages */
+
+/*#region 2.1 - Create (Page) */
+
+div.section.contact-us {
+    min-height: 800px;
+    background-color: #1B65A4;
+    color: #fff;
+    padding-bottom: 50px;
+}
+
+/*#endregion */
+
+/*#region 2.2 - Watch (Page) */
+
+    div.model-tbl div.model-tbl-tr {
+        float: left;
+        width: 100%;
+        background-color: rgba(176, 176, 176, 0.1);
+        font-weight: normal;
+        color: #666;
+        cursor: pointer;
+    }
+
+        div.model-tbl div.model-tbl-tr span {
+            float: left;
+            padding: 10px 0 10px 10px;
+            border-bottom: 1px solid #adc4d8;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        div.model-tbl div.model-tbl-tr.unread {
+            font-weight: bold;
+            color: #000;
+            background-color: #fff;
+        }
+
+
+/*#endregion */
+
+/*#endregion */
+
+/*#region 3 - Media Queries */
+
+@media screen and (max-width:767px) {
+}
+
+@media screen and (max-width:479px) {
+}
+
+/*#endregion */
+

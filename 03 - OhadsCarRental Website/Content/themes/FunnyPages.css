@@ -1,0 +1,338 @@
+﻿/*--------------------------------------------
+    CSS Chapters:
+    -------------
+    0 - General formatting
+    1 - Font icons
+    2 - Specific Pages
+        2.1 - Forgotten Password Page
+        2.2 - Privacy Policy Page
+        2.3 - Help Page
+        2.4 - Terms and Comditions Page
+    3 - Media Queries
+--------------------------------------------*/
+
+/*#region 0 - General formatting */
+
+section.actualContent {
+    min-height: initial;
+}
+
+h2 {
+    margin: 0;
+}
+
+div.funny-wrapper {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    float: left;
+    padding-bottom: 30px;
+    background-color: #000;
+    color: #b4b3b3;
+    text-align: center;
+    font-size: 18px;
+}
+
+    div.funny-wrapper.light {
+        background-color: #eee;
+    }
+
+.funny-name {
+    color: #888;
+    font-size: 20px;
+    letter-spacing: 3px;
+    font-weight: 100;
+    font-family: 'Impact';
+    margin-bottom: 5px;
+}
+
+.funny-title {
+    color: #fff;
+    font-size: 30px;
+    letter-spacing: 5px;
+    font-weight: 100;
+    font-family: 'Impact';
+    margin-bottom: -4px;
+}
+
+.funny-subtitle {
+    color: #000;
+    font-size: 28px;
+    letter-spacing: 3px;
+    font-weight: 100;
+    font-family: 'Impact';
+    text-shadow: 1px 1px rgba(255, 255, 255, 0.2);
+}
+
+.funny-warning {
+    color: red;
+}
+
+hr.title-separator {
+    width: 80%;
+    max-width: 936px;
+    box-shadow: 15px 4px 0px #a0a0a0;
+    margin-bottom: 4%;
+}
+
+hr.sub-separator {
+    width: 40%;
+    max-width: 936px;
+    margin-bottom: 15px;
+    border-color: #444;
+}
+
+    hr.sub-separator.second {
+        width: 30%;
+    }
+
+div.video-wrapper {
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+    div.video-wrapper iframe {
+        width: 100%;
+    }
+
+    div.video-wrapper.main-video {
+        max-height: 520px;
+        max-width: 960px;
+    }
+
+div.funny-header-wrapper {
+    height: 300px;
+    -moz-box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+    -webkit-box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+}
+
+div.funny-header {
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: 1200px;
+    height: 100%;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+div.funny-content {
+    float: right;
+    width: 500px;
+    margin-right: 10%;
+    text-shadow: 2px 2px 1px black;
+}
+
+/*#endregion */
+
+/*#region 1 - Font icons */
+
+.funny-icon {
+    font-size: 100px;
+    text-shadow: 2px 2px 2px rgba(255,255,255,0.5);
+    color: #ccc;
+    padding-top: 30px;
+    cursor: default;
+}
+
+.icon-confused::before {
+    content: "\e91a";
+}
+
+.icon-panic::before {
+    content: "\e919";
+    color: rgb(139, 0, 213);
+    text-shadow: 4px 3px 1px rgb(37, 3, 69);
+}
+
+.icon-shield::before {
+    content: "\e912";
+    color: #b2b9d9;
+    text-shadow: 3px 3px 1px rgb(37, 3, 69);
+    font-size: 75px;
+}
+
+.icon-terms::before {
+    content: "\e91c";
+    color: #1B65A4;
+    text-shadow: 2px 2px 1px #053b69;
+}
+
+/*#endregion */
+
+/*#region 2 - Specific Pages */
+
+/*#region 2.1 - Forgotten Password Page */
+
+div.funny-header-wrapper.theme-panic {
+    background-color: rgb(69, 23, 111);
+}
+
+div.funny-header.bg-panic {
+    background-image: url('../images/site/forgotten-header.jpg');
+    box-shadow: 100px 0px 130px 10px rgb(69, 23, 111) inset;
+}
+
+/*#endregion */
+
+/*#region 2.2 - Privacy Policy Page */
+
+div.funny-wrapper.privacy {
+    background-color: #fff;
+}
+
+.funny-title.dark {
+    color: #aaa;
+}
+
+div.funny-header-wrapper.theme-privacy {
+    background-color: #fff;
+    box-shadow: none;
+}
+
+div.funny-header.bg-privacy {
+    background-image: url('../images/site/privacy-header.jpg');
+    box-shadow: 0 0 30px 20px #fff inset;
+}
+
+/*#endregion */
+
+/*#region 2.3 - Help Page */
+
+div.funny-header-wrapper.theme-help {
+    background-color: #888;
+}
+
+div.funny-header.bg-help {
+    background-image: url('../images/site/help-header.jpg');
+    box-shadow: 0 0 10px 10px #888 inset;
+}
+
+div.scroll-wrapper {
+    padding: 25% 0;
+}
+
+div.scroll-end-wrapper {
+    padding-top: 25%;
+}
+
+div.bunchie-wrapper {
+    max-width: 120px;
+    margin: 0 auto;
+}
+
+    div.bunchie-wrapper img {
+        height: 100%;
+        width: 100%;
+    }
+
+div.list-bunchie {
+    margin: 0 auto;
+}
+
+    div.list-bunchie img {
+        height: 100%;
+        width: 80px;
+    }
+
+/*#endregion */
+
+/*#region 2.4 - Terms and Comditions Page */
+
+div.terms-content {
+    padding: 80px 0;
+}
+
+div.funny-header-wrapper.theme-terms {
+    background-color: #000;
+}
+
+div.funny-header.bg-terms {
+    background-image: url('../images/site/terms-header.jpg');
+    box-shadow: 0 0 80px 40px #000 inset;
+}
+
+ol.terms-details {
+    max-width: 750px;
+    width: 60%;
+    list-style: decimal;
+    margin: 0 auto;
+}
+
+    ol.terms-details li {
+        text-align: left;
+        padding: 10px;
+    }
+
+    ol.terms-details a {
+        text-decoration: underline;
+        border: 0;
+    }
+
+    ol.terms-details span.underline {
+        text-decoration: underline;
+    }
+
+div.my-picture {
+    width: 600px;
+    margin: 50px auto;
+}
+
+    div.my-picture img {
+        border: 10px dashed #1B65A4;
+        border-radius: 100%;
+        padding: 10px;
+        width: 300px;
+    }
+
+/*#endregion */
+
+/*#endregion */
+
+/*#region 3 - Media Queries */
+
+@media screen and (max-width:767px) {
+
+    div.video-wrapper {
+        height: 80%;
+        width: 80%;
+    }
+
+    div.funny-content {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .funny-icon {
+        font-size: 75px;
+        padding-top: 10px;
+    }
+
+    .icon-panic::before {
+        text-shadow: 3px 2px 2px rgb(37, 3, 69);
+    }
+
+    ol.terms-details {
+        width: 80%;
+        list-style: decimal;
+    }
+
+    div.my-picture {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:479px) {
+    .funny-subtitle {
+        font-size: 18px;
+    }
+
+    div.my-picture img {
+        width: 80%;
+    }
+}
+
+/*#endregion */
+

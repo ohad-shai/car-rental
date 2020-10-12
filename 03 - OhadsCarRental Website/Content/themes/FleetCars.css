@@ -1,0 +1,361 @@
+﻿/*--------------------------------------------
+    CSS Chapters:
+    -------------
+    0 - General formatting
+    1 - Font icons
+    2 - Page Content Sections:
+        2.1 - Search Form Section
+        2.2 - Results Section
+        2.3 - Last Searches Section
+    3 - Media Queries
+--------------------------------------------*/
+
+/*#region 0 - General formatting */
+
+div.search-no-results {
+    letter-spacing: 3px;
+    font-weight: 100;
+    font-family: 'Impact';
+    color: #999;
+    font-size: 20px;
+    text-align: center;
+    text-shadow: -1px 1px 2px rgba(0, 0, 0, 0.3);
+    padding: 25px 2%;
+}
+
+
+
+
+
+/*#endregion */
+
+/*#region 1 - Font icons */
+
+.proj-info-icons {
+    font-size: 100px;
+    padding-bottom: 25px;
+    margin-top: 30px;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.8);
+    cursor: default;
+}
+
+.icon-message::before {
+    content: "\e905";
+}
+
+.icon-loacation::before {
+    content: "\e906";
+}
+
+/*#endregion */
+
+/*#region 2 - Page Content Sections */
+
+/*#region 2.1 - Search Form Section */
+
+#searchForm input[type=submit] {
+    min-width: 100px;
+    background-color: rgb(90, 105, 130);
+    font-weight: normal;
+    text-align: center;
+    border: 1px solid #7c7c7c;
+    border-radius: 3px;
+    text-shadow: 1px 1px 2px #000;
+    box-shadow: 0 0 3px #000;
+}
+
+    #searchForm input[type=submit]:hover {
+        background-color: rgb(95, 110, 150);
+    }
+
+div.search-more-content {
+    display: none;
+}
+
+/* Year DropDown Width Length */
+div.basic-form.basic-control-bar.search div.basic-field #DDLs_SelectedYear {
+    width: 65px;
+}
+
+/* Gear DropDown Width Length */
+div.basic-form.basic-control-bar.search div.basic-field #DDLs_SelectedGear {
+    width: 80px;
+}
+
+/* Text Width Length */
+div.basic-form.basic-control-bar.search div.basic-field #FreeText {
+    width: 130px;
+}
+
+/* (StartDate, ReturnDate) Width Length */
+div.basic-form.basic-control-bar.search div.basic-field #StartDate,
+div.basic-form.basic-control-bar.search div.basic-field #ReturnDate {
+    width: 140px;
+}
+
+input[type='button']#searchHistory {
+    display: inline-block;
+    background-color: rgba(70, 80, 100, 0.4);
+    text-align: center;
+    font-size: 14px;
+    width: initial;
+    color: #fff;
+    border: 1px solid #7c7c7c;
+    border-radius: 3px;
+    text-shadow: 1px 1px 2px #000;
+    box-shadow: 0 0 3px #000;
+    padding: 3px 25px;
+    cursor: pointer;
+}
+
+/*#endregion */
+
+/*#region 2.2 - Results Section */
+
+div.basic-form.results {
+    background-color: #606171;
+    box-shadow: 0 0 50px 10px rgba(0, 0, 0, 0.3) inset, 0 0 2px 10px rgba(255, 255, 255, 0.5) inset;
+    margin-top: 25px;
+}
+
+div.section-results {
+    margin: 0 2%;
+    overflow: hidden;
+}
+
+div.vehicle-wrapper {
+    float: left;
+    width: 25%;
+    height: 100%;
+    background: #0070c6;
+    border: 1px solid #0060a9;
+    text-align: center;
+    color: #fff;
+    padding: 12px 0;
+    margin: 0 auto;
+}
+
+    div.vehicle-wrapper * {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    div.vehicle-wrapper div.vehicle-content {
+        padding: 0 12px;
+    }
+
+        div.vehicle-wrapper div.vehicle-content > p {
+            margin-top: 12px;
+        }
+
+        div.vehicle-wrapper div.vehicle-content div.vehicle-img {
+            margin: 0 auto;
+            width: 80%;
+            text-align: center;
+            float: none;
+        }
+
+    div.vehicle-wrapper img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    div.vehicle-wrapper div.vehicle-content h4 {
+        font-size: 20px;
+    }
+
+    div.vehicle-wrapper p.vehicle-year {
+        margin: 5px 0 !important;
+        display: inline-block;
+    }
+
+    div.vehicle-wrapper div.vehicle-price {
+        width: 75%;
+        background-color: rgba(0, 0, 0, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 8px;
+        box-shadow: 0 0 2px 1px rgba(255, 255, 255, 0.2), 1px 1px 15px rgba(0, 0, 0, 0.2) inset;
+        color: #eee;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+        padding: 6px;
+        font-size: 14px;
+        margin: 15px auto;
+        margin-bottom: 25px;
+    }
+
+        div.vehicle-wrapper div.vehicle-price p span {
+            color: #08e134;
+            font-weight: bold;
+        }
+
+    div.vehicle-wrapper input[type=button] {
+        display: block;
+        line-height: 14px;
+        font: bold 14px arial;
+        text-align: center;
+        text-shadow: 1px 1px rgba(0, 0, 0, 0.1);
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        cursor: pointer;
+    }
+
+        div.vehicle-wrapper input[type=button]:hover {
+            color: #0090ff;
+        }
+
+input[type=button].chk-availability-btn {
+    height: 30px;
+    width: 65%;
+    background: #75afff;
+    color: #0060a9;
+    font-size: 11px !important;
+    border-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.6) inset;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    padding: 6px 0;
+    margin: -8px auto;
+}
+
+input[type=button].order-now-btn {
+    height: 35px;
+    width: 90%;
+    background: rgb(20, 59, 112);
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border-color: #222;
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin: 6px auto;
+}
+
+div.vehicle-view-details {
+    text-align: center;
+    padding-top: 8px;
+}
+
+    div.vehicle-view-details a {
+        font-size: 15px;
+        color: #00169d;
+        cursor: pointer;
+    }
+
+        div.vehicle-view-details a:hover {
+            text-decoration: underline;
+        }
+
+/*#endregion */
+
+/*#region 2.3 - Last Searches Section */
+
+div.basic-form.history {
+    background: rgb(255,255,255);
+    background: -moz-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(219,219,219,1) 100%);
+    background: -webkit-linear-gradient(left, rgba(255,255,255,1) 0%,rgba(219,219,219,1) 100%);
+    background: linear-gradient(to right, rgba(255,255,255,1) 0%,rgba(219,219,219,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#dbdbdb',GradientType=1 );
+    padding: 0;
+    margin-top: 25px;
+    margin-bottom: 0;
+}
+
+div.top-control {
+    width: 100%;
+}
+
+div.basic-form.history button.history-close {
+    float: right;
+    background-color: transparent;
+    font-size: 18px;
+    color: #000;
+    text-shadow: 1px 1px rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    padding: 8px 10px 0 4px;
+    cursor: pointer;
+}
+
+    div.basic-form.history button.history-close::before {
+        font-family: "icomoon";
+        font-weight: normal;
+        font-style: normal;
+        -webkit-font-smoothing: antialiased;
+        content: "\e923";
+    }
+
+div.s-history-content {
+    display: inline-block;
+    width: 100%;
+    padding: 0 20px 20px 20px;
+}
+
+    div.s-history-content h4 {
+        color: #555;
+        font-size: 16px;
+    }
+
+    div.s-history-content ul {
+        margin: 10px 40px;
+        list-style: disc;
+    }
+
+        div.s-history-content ul li {
+            font-size: 14px;
+            color: #001dff;
+            margin: 5px;
+        }
+
+            div.s-history-content ul li a {
+                text-decoration: underline;
+                color: #001dff;
+                cursor: pointer;
+            }
+
+                div.s-history-content ul li a:hover {
+                    color: #009aff;
+                }
+
+/*#endregion */
+
+/*#endregion */
+
+/*#region 3 - Media Queries */
+
+@media screen and (max-width:991px) {
+    div.vehicle-wrapper {
+        width: 33%;
+    }
+}
+
+@media screen and (max-width:767px) {
+    div.vehicle-wrapper {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width:479px) {
+    div.vehicle-wrapper {
+        width: 100%;
+        text-align: left;
+    }
+
+        div.vehicle-wrapper div.vehicle-content div.vehicle-img {
+            width: 50%;
+            float: right;
+        }
+
+        div.vehicle-wrapper div.vehicle-price {
+            width: initial;
+            float: left;
+        }
+
+    div.s-history-content ul {
+        margin: 0;
+    }
+}
+
+/*#endregion */
+
+
+/***************************************/

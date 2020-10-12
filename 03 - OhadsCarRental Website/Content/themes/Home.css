@@ -1,0 +1,696 @@
+﻿/*--------------------------------------------
+    CSS Chapters:
+    -------------
+    0 - General formatting
+    1 - Font icons
+    2 - Page Content Sections:
+        2.1 - Header Section
+        2.2 - About Section
+        2.3 - More About Section
+        2.4 - Home Companies Section
+        2.5 - Project Information Section
+    3 - Media Queries
+--------------------------------------------*/
+
+/*#region 0 - General formatting */
+
+div.section {
+    opacity: 0;
+    width: 100%;
+    float: left;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #fff;
+    color: #616161;
+    border-top: 1px solid #ccc;
+    box-shadow: inset 0px -1px 12px rgba(0,0,0,0.2), 0px 1.5px 2px rgba(0,0,0,0.5);
+    -webkit-box-shadow: inset 0px -1px 12px rgba(0,0,0,0.2), 0px 1.5px 2px rgba(0,0,0,0.5);
+    -moz-box-shadow: inset 0px -1px 12px rgba(0,0,0,0.2), 0px 1.5px 2px rgba(0,0,0,0.5);
+}
+
+h1.block-title {
+    letter-spacing: 5px;
+    font-weight: 100;
+    font-family: 'Impact';
+    text-transform: uppercase;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: -4px;
+}
+
+hr.block-title-separator {
+    width: 80%;
+    max-width: 936px;
+    box-shadow: 15px 4px 0px #a0a0a0;
+    margin-bottom: 20px;
+}
+
+form label {
+    display: block;
+    width: 25%;
+    float: left;
+    font-size: 0.875em;
+    color: #000;
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+form h2 {
+    font-size: 2em;
+    font-weight: 700;
+    line-height: 1.3em;
+    color: #000;
+    text-shadow: 1px 1px 0 rgba(255,255,255,0.5);
+    padding: 0 0 15px;
+}
+
+/*#endregion */
+
+/*#region 1 - Font icons */
+
+.proj-info-icons {
+    font-size: 100px;
+    padding-bottom: 25px;
+    margin-top: 30px;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.8);
+    cursor: default;
+}
+
+.icon-webApp::before {
+    content: "\e92a";
+}
+
+.icon-wDesign::before {
+    content: "\e929";
+}
+
+.icon-gDesign::before {
+    content: "\e901";
+}
+
+.icon-vidnAud::before {
+    content: "\e917";
+}
+
+div.v-block div.v-block-icons:before {
+    font-size: 40px;
+    margin: 10% 0;
+    text-shadow: 1px 1px rgba(0,0,0,0.8);
+    cursor: default;
+}
+
+.icon-message::before {
+    content: "\e905";
+}
+
+.icon-loacation::before {
+    content: "\e906";
+}
+
+/*#endregion */
+
+/*#region 2 - Page Content Sections */
+
+/*#region 2.1 - Header Section */
+
+div#home-header {
+    background-color: #489AE3;
+    background-image: url('../images/site/oscr_bg.jpg');
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    height: 300px;
+    position: relative;
+    -moz-box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+    -webkit-box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+}
+
+div#home-header-content {
+    height: 100%;
+    width: 75%;
+    max-width: 960px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+img#home-header-logo {
+    opacity: 0;
+    padding-top: 30px;
+    max-width: 100%;
+}
+
+div#home-header-text {
+    color: #ffa605;
+    text-shadow: 1px 1px 2px black;
+    font-size: 20px;
+    padding: 20px;
+}
+
+    div#home-header-text h1 {
+        opacity: 0;
+        color: white;
+        font-size: 30px;
+        text-shadow: 0px 0px 20px black,-2px 2px 0px black, -1px -2px 0px white;
+        padding: 2px 0 5px 0;
+    }
+
+    div#home-header-text p {
+        opacity: 0;
+    }
+
+/*#endregion */
+
+/*#region 2.2 - About Section */
+
+div.section.about {
+    padding: 0;
+    background: rgb(203,205,206);
+    background: -moz-linear-gradient(top, rgba(203,205,206,1) 0%, rgba(246,246,246,1) 100%);
+    background: -webkit-linear-gradient(top, rgba(203,205,206,1) 0%,rgba(246,246,246,1) 100%);
+    background: linear-gradient(to bottom, rgba(203,205,206,1) 0%,rgba(246,246,246,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cbcdce', endColorstr='#f6f6f6',GradientType=0 );
+}
+
+#login-form {
+    margin: 0 auto;
+    display: block;
+    width: 90%;
+    max-width: 1100px;
+    border-radius: 5px;
+    position: relative;
+}
+
+    #login-form label {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+div.about-content {
+    height: 100%;
+    width: 100%;
+}
+
+#login-form div.left,
+#login-form div.right {
+    float: left;
+    width: 50%;
+}
+
+#login-form div.left {
+    min-height: 293px;
+    margin-top: -50px;
+    background: rgb(252,234,187);
+    background: -moz-linear-gradient(-45deg, rgba(252,234,187,1) 0%, rgba(247,211,121,1) 50%, rgba(252,205,77,1) 50%, rgba(247,203,93,1) 51%, rgba(251,223,147,1) 100%);
+    background: -webkit-linear-gradient(-45deg, rgba(252,234,187,1) 0%,rgba(247,211,121,1) 50%,rgba(252,205,77,1) 50%,rgba(247,203,93,1) 51%,rgba(251,223,147,1) 100%);
+    background: linear-gradient(135deg, rgba(252,234,187,1) 0%,rgba(247,211,121,1) 50%,rgba(252,205,77,1) 50%,rgba(247,203,93,1) 51%,rgba(251,223,147,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fceabb', endColorstr='#fbdf93',GradientType=1 );
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-box-shadow: 0 2px 2px rgba(0,0,0,0.4);
+    -webkit-box-shadow: 0 2px 2px rgba(0,0,0,0.4);
+    box-shadow: 0 2px 2px rgba(0,0,0,0.4);
+    transition: all .2s ease-in-out;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+}
+
+#login-form div.right {
+    padding: 50px 0 50px 50px;
+    color: #555;
+    font-size: 18px;
+}
+
+    #login-form div.right h1 {
+        color: #444;
+        font-size: 25px;
+    }
+
+form#CarsSearchForm {
+    padding: 5%;
+}
+
+    form#CarsSearchForm fieldset div {
+        clear: both;
+        height: 30px;
+        line-height: 30px;
+        padding: 0 0 5px;
+    }
+
+form fieldset#rental-search input[type='date'],
+form fieldset#rental-search input[type='text'] {
+    width: 74%;
+    float: right;
+    margin: 0;
+    border-radius: 4px;
+    background: #FEFEFE;
+    border-color: #8E8E8E #E1E1E1 #E1E1E1 #8E8E8E;
+    border-style: solid;
+    border-width: 1px;
+    font-size: 0.813em;
+    padding: 5px;
+}
+
+fieldset#rental-search div.additional-info {
+    margin: 6px;
+}
+
+    fieldset#rental-search div.additional-info p {
+        float: left;
+        width: auto;
+        padding: 0;
+        font-size: 11px;
+        color: #777;
+        text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.1);
+    }
+
+form#CarsSearchForm div.send-container {
+    font-size: 14px;
+    margin: 15px 0 35px 0;
+}
+
+    form#CarsSearchForm div.send-container a {
+        float: left;
+    }
+
+    form#CarsSearchForm div.send-container input[type='submit'] {
+        float: right;
+        height: 30px;
+        width: 90px;
+        background-color: rgb(245, 199, 85);
+        color: #fff;
+        font-weight: bold;
+        margin: -10px 0 0 0;
+        border: 1px solid rgb(211, 169, 66);
+        border-radius: 6px;
+        box-shadow: 1px 1px #444;
+        text-shadow: 1px 1px 1px #222;
+        cursor: pointer;
+        transition: all .2s linear;
+        -webkit-transition: all .2s linear;
+        -moz-transition: all .2s linear;
+        -o-transition: all .2s linear;
+    }
+
+        form#CarsSearchForm div.send-container input[type='submit']:hover {
+            background-color: rgb(252, 199, 62);
+            text-shadow: 1px 1px 3px #000;
+        }
+
+div.companies-logos-wrapper {
+    float: right;
+    padding: 25px 0 10px 0;
+    width: 100%;
+    text-align: center;
+}
+
+    div.companies-logos-wrapper ul {
+        display: inline-block;
+        text-align: center;
+    }
+
+    div.companies-logos-wrapper li {
+        list-style: none;
+        padding: 20px;
+        display: inline-block;
+    }
+
+/*#endregion */
+
+/*#region 2.3 - More About Section */
+
+div.section.more-about {
+    min-height: 200px;
+    background-color: #ddd;
+}
+
+    div.section.more-about div.v-ordered-about {
+        margin: 0 auto;
+        display: block;
+        width: 80%;
+        max-width: 1100px;
+        border-radius: 5px;
+        position: relative;
+    }
+
+        div.section.more-about div.v-ordered-about div.v-block {
+            float: left;
+            min-height: 180px;
+            width: 28%;
+            margin: 2%;
+            background: rgb(238,238,238);
+            background: -moz-linear-gradient(-45deg, rgba(238,238,238,1) 0%, rgba(204,204,204,1) 100%);
+            background: -webkit-linear-gradient(-45deg, rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%);
+            background: linear-gradient(135deg, rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#cccccc',GradientType=1 );
+            text-align: center;
+            word-wrap: break-word;
+            border: 1px solid #8E8E8E;
+            border-color: #8E8E8E #E1E1E1 #E1E1E1 #8E8E8E;
+            border-radius: 12px;
+            box-shadow: 3px 4px 2px #eee, 1px 1px 5px #666 inset;
+        }
+
+div.v-block p {
+    margin-bottom: 15px;
+}
+
+    div.v-block p.call-phone {
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.3);
+        color: #444;
+        text-shadow: 1px 1px 2px #bbb;
+        font-weight: bold;
+    }
+
+    div.v-block p.comp-location {
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.1);
+        color: #444;
+        text-shadow: 1px 1px 2px #bbb;
+        font-weight: bold;
+    }
+
+/*#endregion */
+
+/*#region 2.4 - Home Companies Section */
+
+div.section.home-companies {
+    background-color: #1B65A4;
+    color: #fff;
+    padding-bottom: 50px;
+}
+
+.accordion {
+    width: 100%;
+    max-width: 1080px;
+    height: 250px;
+    overflow: hidden;
+    margin: 50px auto;
+    box-shadow: 2px 2px 8px 2px black;
+}
+
+    .accordion a {
+        border-bottom: none;
+    }
+
+    .accordion ul {
+        width: 100%;
+        display: table;
+        table-layout: fixed;
+        margin: 0;
+        padding: 0;
+    }
+
+        .accordion ul li {
+            display: table-cell;
+            vertical-align: bottom;
+            position: relative;
+            width: 16.666%;
+            height: 250px;
+            background-repeat: no-repeat;
+            background-position: center center;
+            transition: all 500ms ease;
+        }
+
+            .accordion ul li div {
+                display: block;
+                overflow: hidden;
+                width: 100%;
+            }
+
+                .accordion ul li div a {
+                    display: block;
+                    height: 250px;
+                    width: 100%;
+                    position: relative;
+                    z-index: 3;
+                    vertical-align: bottom;
+                    padding: 15px 20px;
+                    box-sizing: border-box;
+                    color: #fff;
+                    text-decoration: none;
+                    font-family: Open Sans, sans-serif;
+                    transition: all 200ms ease;
+                }
+
+                    .accordion ul li div a * {
+                        opacity: 0;
+                        margin: 0;
+                        width: 100%;
+                        text-overflow: ellipsis;
+                        position: relative;
+                        z-index: 5;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        -webkit-transform: translateX(-20px);
+                        transform: translateX(-20px);
+                        -webkit-transition: all 400ms ease;
+                        transition: all 400ms ease;
+                    }
+
+                    .accordion ul li div a h2 {
+                        font-family: Montserrat,sans-serif;
+                        text-overflow: clip;
+                        font-size: 24px;
+                        text-transform: uppercase;
+                        margin-bottom: 2px;
+                        top: 160px;
+                    }
+
+                    .accordion ul li div a p {
+                        top: 160px;
+                        font-size: 13.5px;
+                    }
+
+            .accordion ul li:nth-child(1) {
+                background-image: url("../images/site/accordion-toyota.jpg");
+            }
+
+            .accordion ul li:nth-child(2) {
+                background-image: url("../images/site/accordion-mazda.jpg");
+            }
+
+            .accordion ul li:nth-child(3) {
+                background-image: url("../images/site/accordion-kia.jpg");
+            }
+
+            .accordion ul li:nth-child(4) {
+                background-image: url("../images/site/accordion-nissan.jpg");
+            }
+
+            .accordion ul li:nth-child(5) {
+                background-image: url("../images/site/accordion-ford.jpg");
+            }
+
+            .accordion ul li:nth-child(6) {
+                background-image: url("../images/site/accordion-honda.jpg");
+            }
+
+        .accordion ul:hover li {
+            width: 8%;
+        }
+
+            .accordion ul:hover li:hover {
+                width: 60%;
+            }
+
+                .accordion ul:hover li:hover a {
+                    background: rgba(0, 0, 0, 0.4);
+                }
+
+                    .accordion ul:hover li:hover a * {
+                        opacity: 1;
+                        -webkit-transform: translateX(0);
+                        transform: translateX(0);
+                    }
+
+/*#endregion */
+
+/*#region 2.5 - Project Information Section */
+
+div.section.proj-info {
+    padding-bottom: 100px;
+}
+
+.w-container {
+    margin: 0 auto;
+    max-width: 940px;
+    overflow: hidden;
+}
+
+    .w-container:before, .w-container:after {
+        content: " ";
+        display: table;
+    }
+
+    .w-container:after {
+        clear: both;
+    }
+
+.w-row .w-row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.w-col {
+    position: relative;
+    float: left;
+    width: 100%;
+    min-height: 1px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+    .w-col .w-col {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+div.proj-info-box {
+    padding-right: 31px;
+    padding-left: 31px;
+    text-align: center;
+    padding-top: 20px;
+}
+
+    div.proj-info-box h3,
+    div.proj-info-box p {
+        color: #616161;
+    }
+
+    div.proj-info-box p {
+        padding-top: 14px;
+    }
+
+    /*#region Project Information Box Colors */
+
+    div.proj-info-box.green {
+        color: #4ec74c;
+    }
+
+        div.proj-info-box.green hr {
+            border-color: #4ec74c;
+        }
+
+    div.proj-info-box.purple {
+        color: #8a2be2;
+    }
+
+        div.proj-info-box.purple hr {
+            border-color: #8a2be2;
+        }
+
+    div.proj-info-box.blue {
+        color: #5865ff;
+    }
+
+        div.proj-info-box.blue hr {
+            border-color: #5865ff;
+        }
+
+    div.proj-info-box.red {
+        color: #dc143c;
+    }
+
+        div.proj-info-box.red hr {
+            border-color: #dc143c;
+        }
+
+/*#endregion */
+
+.w-col-3 {
+    width: 25%;
+}
+
+/*#endregion */
+
+/*#endregion */
+
+/*#region 3 - Media Queries */
+
+@media screen and (min-width: 1200px) {
+
+    .w-container {
+        max-width: 1170px;
+    }
+}
+
+@media screen and (max-width:991px) {
+    .w-container {
+        max-width: 728px;
+    }
+}
+
+@media screen and (max-width:767px) {
+
+    #login-form div.left {
+        margin-top: -25px;
+        width: 100%;
+    }
+
+    #login-form div.right {
+        width: 100% !important;
+        padding: 40px !important;
+    }
+
+    .w-row, .w-container .w-row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .w-col {
+        width: 100%;
+        left: auto;
+        right: auto;
+    }
+}
+
+@media screen and (max-width:479px) {
+
+    #login-form div.left {
+        margin-top: -25px;
+        width: 100%;
+    }
+
+    #login-form div.right {
+        width: 100% !important;
+        padding: 40px !important;
+    }
+
+    .w-container {
+        max-width: none;
+    }
+
+    .w-col {
+        width: 100%;
+    }
+
+    form fieldset#rental-search input[type='date'],
+    form fieldset#rental-search input[type='text'] {
+        width: 60%;
+    }
+
+    form label {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .accordion {
+        height: auto;
+    }
+
+        .accordion ul li, .accordion ul li:hover, .accordion ul:hover li, .accordion ul:hover li:hover {
+            position: relative;
+            display: table;
+            table-layout: fixed;
+            width: 100%;
+            -webkit-transition: none;
+            transition: none;
+        }
+}
+
+/*#endregion */
+

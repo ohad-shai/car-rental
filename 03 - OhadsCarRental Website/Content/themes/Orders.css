@@ -1,0 +1,334 @@
+﻿/*--------------------------------------------
+    CSS Chapters:
+    -------------
+    0 - General formatting
+    1 - Font icons
+    2 - Pages:
+        2.1 - Create Order Page
+        2.2 - Order Receipt Page
+        2.3 - Cars to Return Page
+        2.4 - Car Return Page
+        2.5 - Car Details Page
+    3 - Media Queries
+--------------------------------------------*/
+
+/*#region 0 - General formatting */
+
+div.section {
+    opacity: 0;
+    width: 100%;
+    min-height: inherit;
+    float: left;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #fff;
+    color: #616161;
+    border-top: 1px solid #ccc;
+    box-shadow: inset 0px -1px 12px rgba(0,0,0,0.2), 0px 1.5px 2px rgba(0,0,0,0.5);
+    -webkit-box-shadow: inset 0px -1px 12px rgba(0,0,0,0.2), 0px 1.5px 2px rgba(0,0,0,0.5);
+    -moz-box-shadow: inset 0px -1px 12px rgba(0,0,0,0.2), 0px 1.5px 2px rgba(0,0,0,0.5);
+}
+
+h1.block-title {
+    letter-spacing: 5px;
+    font-weight: 100;
+    font-family: 'Impact';
+    text-transform: uppercase;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: -4px;
+}
+
+hr.block-title-separator {
+    width: 80%;
+    max-width: 936px;
+    box-shadow: 15px 4px 0px #a0a0a0;
+    margin-bottom: 20px;
+}
+
+form label {
+    display: block;
+    width: 25%;
+    float: left;
+    font-size: 0.875em;
+    color: #000;
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+form h2 {
+    font-size: 2em;
+    font-weight: 700;
+    line-height: 1.3em;
+    color: #000;
+    text-shadow: 1px 1px 0 rgba(255,255,255,0.5);
+    padding: 0 0 15px;
+}
+
+/*#endregion */
+
+/*#region 1 - Font icons */
+
+
+/*#endregion */
+
+/*#region 2 - Pages */
+
+/*#region 2.1 - Create Order Page */
+
+div.d-section.car-order {
+    background: #ffe77c;
+    background: -moz-linear-gradient(top, #ffe77c 0%, #ceb900 100%);
+    background: -webkit-linear-gradient(top, #ffe77c 0%,#ceb900 100%);
+    background: linear-gradient(to bottom, #ffe77c 0%,#ceb900 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffe77c', endColorstr='#ceb900',GradientType=0 );
+    min-height: inherit;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    color: #000;
+}
+
+    div.d-section.car-order div.basic-form-row {
+        padding-bottom: 0;
+    }
+
+div.basic-form.receipt {
+    max-width: 600px !important;
+    background: #ffffff;
+    background: -moz-linear-gradient(top, #ffffff 0%, #f4f4f4 51%, #dbdbdb 100%);
+    background: -webkit-linear-gradient(top, #ffffff 0%,#f4f4f4 51%,#dbdbdb 100%);
+    background: linear-gradient(to bottom, #ffffff 0%,#f4f4f4 51%,#dbdbdb 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#dbdbdb',GradientType=0 );
+    border: 3px solid #fff;
+    border-top: 2px dotted #555;
+    border-bottom: 2px dotted #555;
+    border-radius: 3px;
+    box-shadow: 0 0 6px #222;
+}
+
+div.car-image-wrapper {
+    margin: 0 auto;
+    width: 80%;
+    text-align: center;
+    float: none;
+}
+
+    div.car-image-wrapper img {
+        max-width: 100%;
+        height: auto;
+    }
+
+div.car-rental-dates {
+    width: 100%;
+}
+
+    div.car-rental-dates > div {
+        display: inline-block;
+        width: 49%;
+    }
+
+div.car-details {
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 0 6px #444 inset;
+    border: 1px solid #fff;
+    padding: 3%;
+    margin-bottom: 20px;
+}
+
+div.basic-form.receipt div.car-details p {
+    display: inline-block;
+    width: 100%;
+    line-height: 20px;
+    font-weight: 900;
+    border-bottom: 1px solid rgba(146, 148, 254, 0.2);
+    margin: 2px 0;
+}
+
+    div.basic-form.receipt div.car-details p > span {
+        font-weight: bold;
+        float: right;
+    }
+
+p.order-terms {
+    text-align: center;
+    font-size: 12px;
+    color: #888;
+}
+
+/*#endregion */
+
+/*#region 2.2 - Order Receipt Page */
+
+div.order-receipt {
+    background: #fff;
+}
+
+    div.order-receipt .title {
+        letter-spacing: 5px;
+        font-weight: 100;
+        font-family: 'Impact';
+        text-transform: uppercase;
+        font-size: 20px;
+        text-align: center;
+        margin-bottom: -4px;
+    }
+
+    div.order-receipt p {
+        line-height: 25px;
+    }
+
+        div.order-receipt p:first-of-type {
+            font-weight: bold;
+        }
+
+    div.order-receipt span.receipt-num {
+        padding: 0 5px;
+        color: #fff;
+        box-shadow: 0 0 1px #fff inset, 0 0 1px 1px #fff;
+        border-radius: 3px;
+        background-color: #222;
+        font-weight: 900;
+        margin-left: 5px;
+    }
+
+div.receipt-nav {
+    width: 160px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+    div.receipt-nav div.basic-btn a {
+        font-size: 15px;
+        padding: 6px;
+    }
+
+/*#endregion */
+
+/*#region 2.3 - Cars to Return Page */
+
+div.control-row {
+    float: left;
+}
+
+    div.control-row * {
+        margin: 0 !important;
+    }
+
+div.basic-btn.rld-all {
+    width: initial;
+    margin-right: 20px !important;
+}
+
+fieldset#carsToReturn * {
+    line-height: 22px;
+    padding: 6px;
+}
+
+fieldset#carsToReturn label {
+    width: initial;
+    line-height: 24px;
+    padding: 6px;
+}
+
+fieldset#carsToReturn input {
+    width: initial;
+}
+
+div.basic-btn.return-this {
+    width: 100%;
+    padding: 1% 2%;
+}
+
+    div.basic-btn.return-this a {
+        float: none;
+        width: initial;
+        background-color: rgba(255, 195, 0, 0.8);
+        font-size: 22px;
+        padding: 6px 30px;
+        margin: 0 auto;
+    }
+
+        div.basic-btn.return-this a:hover {
+            background-color: rgba(255, 195, 0, 0.6);
+        }
+
+h1.alrdy-rtnd {
+    color: #f00 !important;
+    padding: 3%;
+}
+
+/*#endregion */
+
+/*#region 2.4 - Car Return Page */
+
+div.conf-rtn {
+    max-width: 600px !important;
+}
+
+    div.conf-rtn .basic-form-title {
+        color: #333;
+        text-align: center;
+        font-size: 23px;
+        font-weight: 100;
+        font-family: 'Impact';
+        padding: 0 !important;
+    }
+
+div.img-wrapper img {
+    display: block;
+    max-width: 250px;
+    margin: 0 auto;
+}
+
+div.conf-rtn p {
+    float: none !important;
+    text-align: center !important;
+    font-size: 18px;
+    padding: 6px !important;
+}
+
+/*#endregion */
+
+/*#region 2.5 - Car Details Page */
+
+div.d-section.car-details-wrapper {
+    background: #c9de96;
+    background: -moz-linear-gradient(top, #c9de96 0%, #8ab66b 44%, #398235 100%);
+    background: -webkit-linear-gradient(top, #c9de96 0%,#8ab66b 44%,#398235 100%);
+    background: linear-gradient(to bottom, #c9de96 0%,#8ab66b 44%,#398235 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c9de96', endColorstr='#398235',GradientType=0 );
+    min-height: inherit;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    color: #000;
+}
+
+    div.d-section.car-details div.basic-form-row {
+        padding-bottom: 0;
+    }
+
+/*#endregion */
+
+/*#endregion */
+
+/*#region 3 - Media Queries */
+
+@media screen and (max-width:767px) {
+
+    div.img-wrapper img {
+        width: 80%;
+    }
+
+    div.conf-rtn input[type='submit'] {
+        width: 100% !important;
+    }
+}
+
+@media screen and (max-width:479px) {
+    div.receipt-nav {
+        width: 100%;
+    }
+}
+
+/*#endregion */
+
